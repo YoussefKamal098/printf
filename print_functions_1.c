@@ -1,4 +1,28 @@
 #include "main.h"
+
+/**
+ *  print_number -  print_number
+ * @str: args
+ * @parameters: parameters
+ * Return: return
+ */
+int print_number(char *str, parameters_t *parameters)
+{
+	int bytes = 0;
+	int is_negative = (!parameters->unsign && *str == '-');
+
+	if (parameters->space_flag && !parameters->unsign &&
+	    !parameters->plus_flag && !is_negative)
+		bytes += _putchar(' ');
+
+	if (parameters->plus_flag && !is_negative)
+		bytes += _putchar('+');
+
+	bytes += _puts(str);
+
+	return (bytes);
+}
+
 /**
  * print_unsigned_int - print_unsigned_int
  * @args: args
@@ -19,7 +43,9 @@ int print_unsigned_int(va_list args, parameters_t *parameters)
 		num = (unsigned int)va_arg(args, unsigned int);
 
 	str = convert(num, 10, 1);
-	bytes = _puts(str);
+
+	parameters->unsign = 1;
+	bytes = print_number(str, parameters);
 
 	free(str);
 	return (bytes);
@@ -45,7 +71,7 @@ int print_int(va_list args, parameters_t *parameters)
 		num = (int)va_arg(args, int);
 
 	str = convert(num, 10, 1);
-	bytes = _puts(str);
+	bytes = print_number(str, parameters);
 
 	free(str);
 	return (bytes);
@@ -60,15 +86,21 @@ int print_int(va_list args, parameters_t *parameters)
 int print_bin(va_list args, parameters_t *parameters)
 {
 	unsigned int num, bytes = 0;
-	char *str;
+	char *str, *temp;
 
 	num = va_arg(args, unsigned int);
 
-	if (parameters->hashtag_flag)
-		bytes += _putchar('0');
-
 	str = convert(num, 2, 1);
-	bytes += _puts(str);
+
+	if (parameters->hashtag_flag)
+	{
+		temp = str;
+		str = str_concat("0", str);
+		free(temp);
+	}
+
+	parameters->unsign = 1;
+	bytes += print_number(str, parameters);
 
 	free(str);
 	return (bytes);
@@ -84,7 +116,7 @@ int print_oct(va_list args, parameters_t *parameters)
 {
 	unsigned long int num;
 	unsigned int bytes = 0;
-	char *str;
+	char *str, *temp;
 
 	if (parameters->l_modifier)
 		num = va_arg(args, unsigned long int);
@@ -93,11 +125,17 @@ int print_oct(va_list args, parameters_t *parameters)
 	else
 		num = (unsigned int)va_arg(args, unsigned int);
 
-	if (parameters->hashtag_flag)
-		bytes += _putchar('0');
-
 	str = convert(num, 8, 1);
-	bytes += _puts(str);
+
+	if (parameters->hashtag_flag)
+	{
+		temp = str;
+		str = str_concat("0", str);
+		free(temp);
+	}
+
+	parameters->unsign = 1;
+	bytes += print_number(str, parameters);
 
 	free(str);
 	return (bytes);

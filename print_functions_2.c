@@ -9,7 +9,7 @@ int print_hex(va_list args, parameters_t *parameters)
 {
 	unsigned long int num;
 	unsigned int bytes = 0;
-	char *str;
+	char *str, *temp;
 
 	if (parameters->l_modifier)
 		num = va_arg(args, unsigned long int);
@@ -18,11 +18,17 @@ int print_hex(va_list args, parameters_t *parameters)
 	else
 		num = (unsigned int)va_arg(args, unsigned int);
 
-	if (parameters->hashtag_flag)
-		bytes += _puts("0x");
-
 	str = convert(num, 16, 1);
-	bytes += _puts(str);
+
+	if (parameters->hashtag_flag)
+	{
+		temp = str;
+		str = str_concat("0x", str);
+		free(temp);
+	}
+
+	parameters->unsign = 1;
+	bytes += print_number(str, parameters);
 
 	free(str);
 	return (bytes);
@@ -38,7 +44,7 @@ int print_HEX(va_list args, parameters_t *parameters)
 {
 	unsigned long int num;
 	unsigned int bytes = 0;
-	char *str;
+	char *str, *temp;
 
 	if (parameters->l_modifier)
 		num = va_arg(args, unsigned long int);
@@ -47,11 +53,17 @@ int print_HEX(va_list args, parameters_t *parameters)
 	else
 		num = (unsigned int)va_arg(args, unsigned int);
 
-	if (parameters->hashtag_flag)
-		bytes += _puts("0X");
+	str = convert(num, 16, 1);
 
-	str = convert(num, 16, 0);
-	bytes += _puts(str);
+	if (parameters->hashtag_flag)
+	{
+		temp = str;
+		str = str_concat("0X", str);
+		free(temp);
+	}
+
+	parameters->unsign = 1;
+	bytes += print_number(str, parameters);
 
 	free(str);
 	return (bytes);
@@ -85,7 +97,7 @@ int print_address(va_list args, parameters_t *parameters)
 {
 	unsigned long int num;
 	int bytes = 0;
-	char *str;
+	char *str, *temp;
 
 	(void)parameters;
 
@@ -96,7 +108,11 @@ int print_address(va_list args, parameters_t *parameters)
 
 	str = convert(num, 16, 1);
 
-	bytes = _puts("0x") + _puts(str);
+	temp = str;
+	str = str_concat("0x", str);
+	free(temp);
+
+	bytes += print_number(str, parameters);
 
 	free(str);
 	return (bytes);

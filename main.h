@@ -66,11 +66,15 @@ int _print_rev_string(char *str);
 int count_digit(long int num, unsigned int base);
 int print_from_to(char *str, unsigned int start, unsigned int end);
 
+/*str_pack_2.c*/
+char *str_concat(char *str1, char *str2);
+
 /* print_functions_1.c */
 int print_int(va_list args, parameters_t *parameters);
 int print_unsigned_int(va_list args, parameters_t *parameters);
 int print_bin(va_list args, parameters_t *parameters);
 int print_oct(va_list args, parameters_t *parameters);
+int print_number(char *str, parameters_t *parameters);
 
 /* print_functions_2.c */
 int print_hex(va_list args, parameters_t *parameters);
