@@ -28,7 +28,7 @@ int print_int(va_list args)
 	int num, bytes;
 	char *str;
 
-	num = va_arg(args, signed int);
+	num = va_arg(args, int);
 	str = convert(num, 10, 1);
 
 	bytes = _puts(str);

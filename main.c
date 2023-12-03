@@ -49,6 +49,10 @@ int main(void)
 	addr = str;
 	_printf("[%p]\n", addr);
 	printf("[%p]\n", addr);
+	len = _printf("[%d]\n");
+	len2 = printf("[%d]\n", -819251897);
+	printf("[%i %i]\n", len, len2);
+	printf("[%i %i]\n", len, len2);
 	/*_printf("Unknown:[%r]\n");*/
 	/*printf("Unknown:[%r]\n");*/
 
