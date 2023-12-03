@@ -11,10 +11,6 @@ int print_number(char *str, parameters_t *parameters)
 	int bytes = 0;
 	int is_negative = (!parameters->unsign && *str == '-');
 
-	if (parameters->space_flag && !parameters->unsign &&
-	    !parameters->plus_flag && !is_negative)
-		bytes += _putchar(' ');
-
 	if (parameters->plus_flag && !is_negative && !parameters->unsign)
 		bytes += _putchar('+');
 
@@ -95,7 +91,7 @@ int print_bin(va_list args, parameters_t *parameters)
 	if (parameters->hashtag_flag)
 	{
 		temp = str;
-		str = str_concat("0b", str);
+		str = str_concat("0", str);
 		free(temp);
 	}
 
@@ -130,7 +126,7 @@ int print_oct(va_list args, parameters_t *parameters)
 	if (parameters->hashtag_flag)
 	{
 		temp = str;
-		str = str_concat("0o", str);
+		str = str_concat("0", str);
 		free(temp);
 	}
 
