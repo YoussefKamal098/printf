@@ -14,15 +14,20 @@ char *convert(long int num, unsigned int base, unsigned int is_lower)
 	char *str;
 
 	if (num == 0)
-		return ("0");
+	{
+		str = (char *)malloc(2);
+		str[0] = '0';
+		str[1] = '\0';
+
+		return (str);
+	}
 	if (num < 0)
 	{
 		num *= -1;
 		sign = 1;
 	}
 
-	str_len = number_len(num, base);
-
+	str_len = count_digit(num, base);
 	if (sign)
 		str_len++;
 
@@ -38,7 +43,6 @@ char *convert(long int num, unsigned int base, unsigned int is_lower)
 		str[i--] = digits[num % base];
 		num /= base;
 	}
-
 	if (sign)
 		str[0] = '-';
 	return (str);

@@ -2,12 +2,15 @@
 /**
  * print_hex - print_hex
  * @args: args
+ * @parameters: parameters
  * Return: return
  */
-int print_hex(va_list args)
+int print_hex(va_list args, parameters_t *parameters)
 {
 	unsigned int num, bytes;
 	char *str;
+
+	(void)parameters;
 
 	num = va_arg(args, unsigned int);
 	str = convert(num, 16, 1);
@@ -21,12 +24,15 @@ int print_hex(va_list args)
 /**
  * print_HEX - print_HEX
  * @args: args
+ * @parameters: parameters
  * Return: return
  */
-int print_HEX(va_list args)
+int print_HEX(va_list args, parameters_t *parameters)
 {
 	unsigned int num, bytes;
 	char *str;
+
+	(void)parameters;
 
 	num = va_arg(args, unsigned int);
 	str = convert(num, 16, 0);
@@ -58,14 +64,17 @@ int _print_HEX(unsigned long int num)
 /**
  * print_address - print_address
  * @args: args
+ * @parameters: parameters
  * Return: return
  */
 
-int print_address(va_list args)
+int print_address(va_list args, parameters_t *parameters)
 {
 	unsigned long int num;
 	int bytes = 0;
 	char *str;
+
+	(void)parameters;
 
 	num = va_arg(args, unsigned long int);
 

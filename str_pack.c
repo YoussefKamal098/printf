@@ -56,13 +56,13 @@ int _print_rev_string(char *str)
 }
 
 /**
- * number_len - number_len
+ * count_digit - count_digit
  * @num: num
  * @base: base
  * Return: return
  */
 
-int number_len(long int num, unsigned int base)
+int count_digit(long int num, unsigned int base)
 {
 	int len = 0;
 

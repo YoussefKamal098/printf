@@ -53,6 +53,7 @@ int main(void)
 	len2 = printf("[%d]\n", -819251897);
 	printf("[%i %i]\n", len, len2);
 	printf("[%i %i]\n", len, len2);
+	_printf("[%d]\n", 0);
 	/*_printf("Unknown:[%r]\n");*/
 	/*printf("Unknown:[%r]\n");*/
 

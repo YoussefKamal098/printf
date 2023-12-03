@@ -22,3 +22,13 @@ int _putchar(char c)
 
 	return (1);
 }
+
+/**
+ * _isdigit - _isdigit
+ * @c: c
+ * Return: return
+ */
+int _isdigit(char c)
+{
+	return (c >= '0' && c <= '9');
+}

@@ -4,7 +4,8 @@
  * @specifier: specifier
  * Return: return
  */
-int (*get_print_fn(char specifier))(va_list)
+
+int (*get_print_fn(char specifier))(va_list args, parameters_t *parameters)
 {
 	specifier_t specifiers[] = {
 	    {'c', print_char},

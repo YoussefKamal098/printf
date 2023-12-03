@@ -3,12 +3,15 @@
 /**
  * print_string - print_string
  * @args: args
+ * @parameters: parameters
  * Return: return
  */
 
-int print_string(va_list args)
+int print_string(va_list args, parameters_t *parameters)
 {
 	char *str;
+
+	(void)parameters;
 
 	str = va_arg(args, char *);
 	if (str == NULL)
@@ -20,13 +23,16 @@ int print_string(va_list args)
 /**
  * print_printable_letters - print_printable_letters
  * @args: args
+ * @parameters: parameters
  * Return: return
  */
 
-int print_printable_letters(va_list args)
+int print_printable_letters(va_list args, parameters_t *parameters)
 {
 	int i, num, bytes;
 	char *str;
+
+	(void)parameters;
 
 	str = va_arg(args, char *);
 
@@ -58,15 +64,18 @@ int print_printable_letters(va_list args)
 /**
  * print_rot13 - print_rot13
  * @args: args
+ * @parameters: parameters
  * Return: return
  */
 
-int print_rot13(va_list args)
+int print_rot13(va_list args, parameters_t *parameters)
 {
 	int i, j, is_print;
 	char decrypt[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char encrypt[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	char *str;
+
+	(void)parameters;
 
 	i = 0;
 	str = va_arg(args, char *);
@@ -97,11 +106,14 @@ int print_rot13(va_list args)
 /**
  * print_rev_string - print_rev_string
  * @args: args
+ * @parameters: parameters
  * Return: return
  */
-int print_rev_string(va_list args)
+int print_rev_string(va_list args, parameters_t *parameters)
 {
 	char *str = va_arg(args, char *);
+
+	(void)parameters;
 
 	if (str == NULL)
 		str = NULL_STRING;
