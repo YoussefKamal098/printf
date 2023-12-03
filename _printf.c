@@ -9,9 +9,8 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0, bytes_count = 0;
+	int i = 0, start, bytes_count = 0;
 	int (*fn)(va_list, parameters_t *);
-	char *start, *end;
 	parameters_t parameters = PARAMETERS_INIT;
 	va_list args;
 
@@ -24,22 +23,20 @@ int _printf(const char *format, ...)
 
 		if (format[i] == '%')
 		{
-			start = (char *)&format[i];
-			end++;
-
-			while (get_flag(*end, &parameters))
-				end++;
-			if (get_modifier(*end, &parameters))
-				end++;
-			fn = get_print_fn(*end);
+			start = i;
+			i++;
+			while (get_flag(format[i], &parameters))
+				i++;
+			if (get_modifier(format[i], &parameters))
+				i++;
+			fn = get_print_fn(format[i]);
 
 			if (fn)
 			{
 				bytes_count += fn(args, &parameters);
-				i++;
 			}
 			else
-				bytes_count += print_from_to(start, end, NULL);
+				bytes_count += print_from_to((char *)format, start, i);
 		}
 		else
 			bytes_count += _putchar(format[i]);

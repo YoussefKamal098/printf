@@ -64,7 +64,7 @@ int _puts(char *str);
 int _strlen(char *str);
 int _print_rev_string(char *str);
 int count_digit(long int num, unsigned int base);
-int print_from_to(char *start, char *stop, char *except);
+int print_from_to(char *str, unsigned int start, unsigned int end);
 
 /* print_functions_1.c */
 int print_int(va_list args, parameters_t *parameters);
