@@ -7,13 +7,13 @@
  */
 int print_hex(va_list args, parameters_t *parameters)
 {
-	unsigned long int num;
+	unsigned long num;
 	unsigned int bytes = 0;
 	char *str;
 
 	if (parameters->l_modifier)
-		num = va_arg(args, unsigned long int);
-	if (parameters->h_modifier)
+		num = (unsigned long)va_arg(args, unsigned long);
+	else if (parameters->h_modifier)
 		num = (unsigned short int)va_arg(args, unsigned int);
 	else
 		num = (unsigned int)va_arg(args, unsigned int);
@@ -36,12 +36,12 @@ int print_hex(va_list args, parameters_t *parameters)
  */
 int print_HEX(va_list args, parameters_t *parameters)
 {
-	unsigned long int num;
+	unsigned long num;
 	unsigned int bytes = 0;
 	char *str;
 
 	if (parameters->l_modifier)
-		num = va_arg(args, unsigned long int);
+		num = (unsigned long)va_arg(args, unsigned long);
 	else if (parameters->h_modifier)
 		num = (unsigned short int)va_arg(args, unsigned int);
 	else

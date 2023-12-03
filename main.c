@@ -64,10 +64,9 @@ int main(void)
 	_printf("[%p]\n", 1257);
 	_printf("[%p]\n", -1257);
 	_printf("[%p]\n", *str2);
-	_printf("[%d]\n", 100000000);
-	_printf("[%d]\n", 1000000000);
-	_printf("[%ld]\n", 10000000000);
-	_printf("[%hd]\n", 10000);
+	_printf("[%lX]\n", 10000000000);
+	_printf("[%lhksdg%lx%lhksdg%lo]\n", 10000000000, 10000000000);
+	printf("[%%]\n");
 	/*_printf("[%p]\n", *str2);
 	printf("[%p]\n", &str2);
 	_printf("Unknown:[%r]\n");
