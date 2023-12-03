@@ -7,12 +7,12 @@
  */
 int print_unsigned_int(va_list args, parameters_t *parameters)
 {
-	unsigned long num;
+	unsigned long int num;
 	unsigned int bytes;
 	char *str;
 
 	if (parameters->l_modifier)
-		num = va_arg(args, unsigned long);
+		num = va_arg(args, unsigned long int);
 	else if (parameters->h_modifier)
 		num = (unsigned short int)va_arg(args, unsigned int);
 	else
@@ -33,12 +33,12 @@ int print_unsigned_int(va_list args, parameters_t *parameters)
  */
 int print_int(va_list args, parameters_t *parameters)
 {
-	long num;
+	long int num;
 	unsigned int bytes;
 	char *str;
 
 	if (parameters->l_modifier)
-		num = (long)va_arg(args, long);
+		num = va_arg(args, long int);
 	else if (parameters->h_modifier)
 		num = (short int)va_arg(args, int);
 	else
@@ -82,12 +82,12 @@ int print_bin(va_list args, parameters_t *parameters)
  */
 int print_oct(va_list args, parameters_t *parameters)
 {
-	unsigned long num;
+	unsigned long int num;
 	unsigned int bytes = 0;
 	char *str;
 
 	if (parameters->l_modifier)
-		num = va_arg(args, unsigned long);
+		num = va_arg(args, unsigned long int);
 	else if (parameters->h_modifier)
 		num = (unsigned short int)va_arg(args, unsigned int);
 	else
