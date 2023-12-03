@@ -9,13 +9,9 @@
 int print_number(char *str, parameters_t *parameters)
 {
 	int bytes = 0;
-	int is_negative = (!parameters->unsign && *str == '-');
+	int is_negative = *str == '-';
 
-	if (parameters->space_flag && !parameters->unsign &&
-	    !parameters->plus_flag && !is_negative)
-		bytes += _putchar(' ');
-
-	if (parameters->plus_flag && !is_negative && !parameters->unsign)
+	if (parameters->plus_flag && !is_negative)
 		bytes += _putchar('+');
 
 	bytes += _puts(str);
