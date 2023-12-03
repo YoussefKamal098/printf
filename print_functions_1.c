@@ -82,12 +82,12 @@ int print_bin(va_list args, parameters_t *parameters)
  */
 int print_oct(va_list args, parameters_t *parameters)
 {
-	unsigned long int num;
+	unsigned long num;
 	unsigned int bytes = 0;
 	char *str;
 
 	if (parameters->l_modifier)
-		num = va_arg(args, unsigned long int);
+		num = va_arg(args, unsigned long);
 	else if (parameters->h_modifier)
 		num = (unsigned short int)va_arg(args, unsigned int);
 	else
