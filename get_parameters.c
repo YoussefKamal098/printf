@@ -1,14 +1,14 @@
 #include "main.h"
 /**
  * get_flag - get_flag
- * @str: str
+ * @c: str
  * @parameters: parameters
  * Return: return
  */
 
-int get_flag(char *str, parameters_t *parameters)
+int get_flag(char c, parameters_t *parameters)
 {
-	switch (*str)
+	switch (c)
 	{
 	case '+':
 		parameters->plus_flag = 1;
@@ -32,13 +32,13 @@ int get_flag(char *str, parameters_t *parameters)
 
 /**
  * get_modifier - get_modifier
- * @str: str
+ * @c: str
  * @parameters: parameters
  * Return: return
  */
-int get_modifier(char *str, parameters_t *parameters)
+int get_modifier(char c, parameters_t *parameters)
 {
-	switch (*str)
+	switch (c)
 	{
 	case 'h':
 		parameters->h_modifier = 1;

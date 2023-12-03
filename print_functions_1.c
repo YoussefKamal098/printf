@@ -44,9 +44,7 @@ int print_int(va_list args, parameters_t *parameters)
 	else
 		num = (int)va_arg(args, int);
 
-	num = va_arg(args, int);
 	str = convert(num, 10, 1);
-
 	bytes = _puts(str);
 
 	free(str);

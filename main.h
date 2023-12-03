@@ -64,6 +64,7 @@ int _puts(char *str);
 int _strlen(char *str);
 int _print_rev_string(char *str);
 int count_digit(long int num, unsigned int base);
+int print_from_to(char *start, char *stop, char *except);
 
 /* print_functions_1.c */
 int print_int(va_list args, parameters_t *parameters);
@@ -91,8 +92,8 @@ int print_percent_sign(va_list args, parameters_t *parameters);
 char *convert(long int num, unsigned int base, unsigned int lower);
 
 /*get_parameters.c*/
-int get_flag(char *str, parameters_t *parameters);
-int get_modifier(char *str, parameters_t *parameters);
+int get_flag(char c, parameters_t *parameters);
+int get_modifier(char c, parameters_t *parameters);
 
 /* init_parameters.c */
 void init_parameters(parameters_t *parameters);

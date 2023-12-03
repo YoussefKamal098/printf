@@ -63,7 +63,7 @@ int main(void)
 	_printf("[%p]\n", 1257);
 	_printf("[%p]\n", -1257);
 	_printf("[%p]\n", *str2);
-	printf("[%p]\n", &str2);
+	/*printf("[%p]\n", &str2);*/
 	/*_printf("Unknown:[%r]\n");*/
 	/*printf("Unknown:[%r]\n");*/
 

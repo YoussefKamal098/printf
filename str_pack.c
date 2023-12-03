@@ -74,3 +74,23 @@ int count_digit(long int num, unsigned int base)
 
 	return (len);
 }
+
+/**
+ * print_from_to - print_from_to
+ * @start: start
+ * @end: end
+ * @except: except
+ * Return: return
+ */
+int print_from_to(char *start, char *end, char *except)
+{
+	unsigned int bytes = 0;
+
+	while (start <= end)
+	{
+		if (start != except)
+			bytes += _putchar(*start);
+		start++;
+	}
+	return (bytes);
+}
