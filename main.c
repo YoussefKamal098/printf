@@ -11,6 +11,7 @@ int main(void)
 	unsigned int ui;
 	void *addr;
 	char *str = NULL;
+	char **str2 = NULL;
 
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
@@ -46,6 +47,7 @@ int main(void)
 	printf("[%s]\n", str);
 	printf("[%p]\n", NULL);
 	str = "asdgsa";
+	str2 = &str;
 	addr = str;
 	_printf("[%p]\n", addr);
 	printf("[%p]\n", addr);
@@ -54,6 +56,14 @@ int main(void)
 	printf("[%i %i]\n", len, len2);
 	printf("[%i %i]\n", len, len2);
 	_printf("[%d]\n", 0);
+	str = "asgas";
+	_printf("[%p]\n", 0);
+	_printf("[%p]\n", NULL);
+	_printf("[%p]\n", "sdgsdg");
+	_printf("[%p]\n", 1257);
+	_printf("[%p]\n", -1257);
+	_printf("[%p]\n", *str2);
+	printf("[%p]\n", &str2);
 	/*_printf("Unknown:[%r]\n");*/
 	/*printf("Unknown:[%r]\n");*/
 

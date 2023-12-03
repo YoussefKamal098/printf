@@ -13,37 +13,36 @@ char *convert(long int num, unsigned int base, unsigned int is_lower)
 	char *digits = is_lower ? "0123456789abcdef" : "0123456789ABCDEF";
 	char *str;
 
-	if (num == 0)
-	{
-		str = (char *)malloc(2);
-		str[0] = '0';
-		str[1] = '\0';
-
-		return (str);
-	}
 	if (num < 0)
 	{
 		num *= -1;
 		sign = 1;
 	}
 
-	str_len = count_digit(num, base);
+	str_len = num == 0 ? 1 : count_digit(num, base);
+
 	if (sign)
 		str_len++;
 
 	str = (char *)malloc(str_len + 1);
+
 	if (str == NULL)
 		exit(1);
 
 	str[str_len] = '\0';
 	i = str_len - 1;
 
+	if (num == 0)
+		str[0] = '0';
+
 	while (num)
 	{
 		str[i--] = digits[num % base];
 		num /= base;
 	}
+
 	if (sign)
 		str[0] = '-';
+
 	return (str);
 }
