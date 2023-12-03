@@ -15,7 +15,7 @@ int print_number(char *str, parameters_t *parameters)
 	    !parameters->plus_flag && !is_negative)
 		bytes += _putchar(' ');
 
-	if (parameters->plus_flag && !is_negative)
+	if (parameters->plus_flag && !is_negative && !parameters->unsign)
 		bytes += _putchar('+');
 
 	bytes += _puts(str);

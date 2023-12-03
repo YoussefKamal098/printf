@@ -70,7 +70,8 @@ int main(void)
 	_printf("[%  i]\n", -76786);
 	_printf("[%  d]\n", 76786);
 	_printf("[%  d]\n", -76786);
-	_printf("[%  +p]\n", -76786);
+	_printf("[% +p]\n", -76786);
+	_printf("[% +u]\n", 2362);
 	/*_printf("[%p]\n", *str2);
 	printf("[%p]\n", &str2);
 	_printf("Unknown:[%r]\n");
