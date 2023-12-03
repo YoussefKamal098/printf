@@ -112,6 +112,7 @@ int print_address(va_list args, parameters_t *parameters)
 	str = str_concat("0x", str);
 	free(temp);
 
+	parameters->unsign = 1;
 	bytes += print_number(str, parameters);
 
 	free(str);
