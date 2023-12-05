@@ -36,6 +36,8 @@ int main(void)
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
 	_printf("Unknown:[%r]\n");
-	printf("Unknown:[%r]\n");
+	/*printf("Unknown:[%r]\n");*/
+	len = _printf("[%+010d]\n", -76255);
+	_printf("[%d]\n", len);
 	return (0);
 }
