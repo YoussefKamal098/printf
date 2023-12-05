@@ -10,7 +10,7 @@
 unsigned int print_string(va_list args, params_t *params)
 {
 	unsigned int len, bytes = 0;
-	char pad_char = 0;
+	char pad_char = ' ';
 	char *str = va_arg(args, char *);
 
 	if (str == NULL)
