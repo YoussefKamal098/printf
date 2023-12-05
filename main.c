@@ -40,7 +40,7 @@ int main(void)
 	len = _printf("[%+010d]\n", -76255);
 	_printf("[%d]\n", len);
 	printf("[%30s]\n", "Youssef Samuel Kamal");
-	len = _printf("[%10.22s]\n", "asfas");
+	len = _printf("[%10.5s]\n", "Youssef");
 	_printf("[%d]\n", len);
 	return (0);
 }

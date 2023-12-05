@@ -44,6 +44,7 @@ char *handle_precision(char *str, params_t *params)
 	if (params->precision != UINT_MAX)
 		while (len++ < params->precision)
 			zeros_len++;
+
 	zeros_pad = (char *)malloc(zeros_len + 1);
 
 	if (zeros_pad == NULL)
