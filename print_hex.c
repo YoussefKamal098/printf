@@ -53,7 +53,7 @@ unsigned int print_HEX(va_list args, params_t *params)
 	else
 		num = (unsigned int)va_arg(args, unsigned int);
 
-	str = convert(num, 16, 1);
+	str = convert(num, 16, 0);
 
 	if (params->hashtag_flag)
 	{
