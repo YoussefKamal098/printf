@@ -1,6 +1,51 @@
 #include "main.h"
 
 /**
+ * handle_precision -handle_precision
+ * @str: str
+ * @params: params
+ * Return: return
+ */
+char *handle_precision(char *str, params_t *params)
+{
+	unsigned int len = _strlen(str), zeros_len = 0, i;
+	char *zeros_pad, *temp;
+	int neg = *str == '-';
+
+	if (str == NULL)
+		return (NULL);
+
+	if (params->precision == UINT_MAX)
+		return (str);
+	if (neg)
+	{
+		str++;
+		len--;
+	}
+	if (params->precision != UINT_MAX)
+		while (len++ < params->precision)
+			zeros_len++;
+	zeros_pad = (char *)malloc(zeros_len + 1);
+
+	if (zeros_pad == NULL)
+		exit(4);
+
+	zeros_pad[zeros_len] = '\0';
+	for (i = 0; i < zeros_len; i++)
+		zeros_pad[i] = '0';
+
+	str = str_concat(zeros_pad, str);
+
+	if (neg)
+	{
+		temp = str;
+		str = str_concat("-", str);
+		free(temp);
+	}
+	return (str);
+}
+
+/**
  *  print_number -  print_number
  * @str: str
  * @params: params
@@ -10,6 +55,8 @@ unsigned int print_number(char *str, params_t *params)
 {
 	if (str == NULL || *str == '\0')
 		return (0);
+
+	str = handle_precision(str, params);
 
 	if (params->minus_flag)
 		return (print_number_left_shift(str, params));

@@ -39,6 +39,8 @@ int main(void)
 	/*printf("Unknown:[%r]\n");*/
 	len = _printf("[%+010d]\n", -76255);
 	_printf("[%d]\n", len);
-	printf("[%10s]\n", "dsgds");
+	printf("[%30s]\n", "Youssef Samuel Kamal");
+	len = _printf("[%10.0d]\n", 0);
+	_printf("[%d]\n", len);
 	return (0);
 }

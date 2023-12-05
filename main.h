@@ -12,9 +12,9 @@
 #define NULL_STRING "(null)"
 #define NULL_POINTER "(nil)"
 
-#define PARAMS_INIT                                       \
-	{                                         \
-		0, 0, 0, 0, 0, 0, 0, 0, 0 \
+#define PARAMS_INIT                                          \
+	{                                            \
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0 \
 	}
 
 /**
@@ -26,6 +26,7 @@
  * @zero_flag: zero_flag
  * @minus_flag: minus_flag
  * @width: width
+ * @precision: precision
  * @h_modifier: h_modifier
  * @l_modifier: l_modifier
  */
@@ -39,6 +40,7 @@ typedef struct params
 	unsigned int zero_flag;
 	unsigned int minus_flag;
 	unsigned int width;
+	unsigned int precision;
 	unsigned int h_modifier;
 	unsigned int l_modifier;
 } params_t;
@@ -128,7 +130,8 @@ void init_params(params_t *params);
 /* get_parameters.c */
 int get_flag(char c, params_t *params);
 int get_modifier(char c, params_t *params);
-unsigned int get_width(char *format, int i, va_list args, params_t *params);
+unsigned int get_width(char *str, int i, va_list args, params_t *params);
+unsigned int get_precision(char *str, int i, va_list args, params_t *params);
 
 /* get_specifier.c */
 unsigned int (*get_print_fn(char specifier))(va_list args, params_t *params);

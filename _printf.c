@@ -29,10 +29,10 @@ int _printf(const char *format, ...)
 			while (get_flag(format[i], &params))
 				i++;
 			i = get_width((char *)format, i, args, &params);
+			i = get_precision((char *)format, i, args, &params);
 
 			if (get_modifier(format[i], &params))
 				i++;
-
 			fn = get_print_fn(format[i]);
 
 			if (fn)

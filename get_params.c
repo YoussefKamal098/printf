@@ -53,28 +53,59 @@ int get_modifier(char c, params_t *params)
 
 /**
  * get_width -  get_width
- * @format: format
+ * @str: str
  * @i: i
  * @args:args
  * @params: params
  * Return: return
  */
 
-unsigned int get_width(char *format, int i, va_list args, params_t *params)
+unsigned int get_width(char *str, int i, va_list args, params_t *params)
 {
 	unsigned int width = 0;
 
-	if (format[i] == '*')
+	if (str[i] == '*')
 	{
 		width = va_arg(args, unsigned int);
 		i++;
 	}
 	else
 	{
-		while (_isdigit(format[i]))
-			width = width * 10 + (format[i++] - '0');
+		while (_isdigit(str[i]))
+			width = width * 10 + (str[i++] - '0');
 	}
 
 	params->width = width;
+	return (i);
+}
+
+/**
+ * get_precision - get_precision
+ * @str: str
+ * @i: i
+ * @args:args
+ * @params: params
+ * Return: return
+ */
+unsigned int get_precision(char *str, int i, va_list args, params_t *params)
+{
+	unsigned int precision = 0;
+
+	if (str[i] != '.')
+		return (i);
+	i++;
+
+	if (str[i] == '*')
+	{
+		precision = va_arg(args, unsigned int);
+		i++;
+	}
+	else
+	{
+		while (_isdigit(str[i]))
+			precision = precision * 10 + (str[i++] - '0');
+	}
+
+	params->precision = precision;
 	return (i);
 }
