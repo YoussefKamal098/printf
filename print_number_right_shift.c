@@ -16,7 +16,6 @@ unsigned int print_number_right_shift(char *str, params_t *params)
 
 	if (str == NULL || *str == '\0' || params->minus_flag)
 		return (0);
-
 	len = _strlen(str);
 	if (params->zero_flag)
 		pad_char = '0';
@@ -34,8 +33,9 @@ unsigned int print_number_right_shift(char *str, params_t *params)
 		bytes += _putchar('+');
 	if (is_neg && pad_char == '0')
 		bytes += _putchar('-');
-
 	if (is_print_sign)
+		len++;
+	if (params->unsign)
 		len++;
 	while (len < params->width)
 	{
