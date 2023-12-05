@@ -34,6 +34,9 @@ char *handle_precision(char *str, params_t *params)
 	if (str == NULL)
 		return (NULL);
 
+	if (!params->precision && *str == '0' && !str[1])
+		str = "";
+
 	if (params->precision == UINT_MAX)
 		return (str);
 	if (neg)
