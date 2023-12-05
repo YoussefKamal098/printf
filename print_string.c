@@ -27,5 +27,5 @@ unsigned int print_string(va_list args, params_t *params)
 	if (!params->minus_flag)
 		bytes += _puts(str);
 
-	return (_puts(str));
+	return (bytes);
 }
