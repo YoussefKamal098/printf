@@ -9,13 +9,23 @@
 
 unsigned int print_string(va_list args, params_t *params)
 {
-	char *str;
+	unsigned int len, bytes = 0;
+	char pad_char = 0;
+	char *str = va_arg(args, char *);
 
-	(void)params;
-
-	str = va_arg(args, char *);
 	if (str == NULL)
 		str = NULL_STRING;
+
+	len = _strlen(str);
+
+	if (params->minus_flag)
+		bytes += _puts(str);
+
+	while (len++ < params->width)
+		bytes += _putchar(pad_char);
+
+	if (!params->minus_flag)
+		bytes += _puts(str);
 
 	return (_puts(str));
 }
