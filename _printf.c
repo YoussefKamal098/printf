@@ -9,31 +9,35 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0, start, bytes_count = 0;
-	int (*fn)(va_list, parameters_t *);
-	parameters_t parameters = PARAMETERS_INIT;
+	unsigned int i = 0, start, bytes_count = 0;
+	unsigned int (*fn)(va_list, params_t *);
+	params_t params = PARAMS_INIT;
 	va_list args;
 
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
+
 	while (format[i])
 	{
-		init_parameters(&parameters);
+		init_params(&params);
 
 		if (format[i] == '%')
 		{
 			start = i;
 			i++;
-			while (get_flag(format[i], &parameters))
+			while (get_flag(format[i], &params))
 				i++;
-			if (get_modifier(format[i], &parameters))
+			i = get_width((char *)format, i, args, &params);
+
+			if (get_modifier(format[i], &params))
 				i++;
+
 			fn = get_print_fn(format[i]);
 
 			if (fn)
 			{
-				bytes_count += fn(args, &parameters);
+				bytes_count += fn(args, &params);
 			}
 			else
 				bytes_count += print_from_to((char *)format, start, i);
@@ -42,7 +46,6 @@ int _printf(const char *format, ...)
 			bytes_count += _putchar(format[i]);
 		i++;
 	}
-
 	va_end(args);
 	_putchar(BUFFER_FLUSH);
 	return (bytes_count);

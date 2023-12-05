@@ -7,7 +7,7 @@
  */
 int _putchar(char c)
 {
-	static int i;
+	static unsigned int i;
 	static char buffer[BUFFER_SIZE];
 
 	if (c == BUFFER_FLUSH || i >= BUFFER_SIZE)

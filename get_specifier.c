@@ -5,7 +5,7 @@
  * Return: return
  */
 
-int (*get_print_fn(char specifier))(va_list args, parameters_t *parameters)
+unsigned int (*get_print_fn(char specifier))(va_list args, params_t *params)
 {
 	specifier_t specifiers[] = {
 	    {'c', print_char},
@@ -23,7 +23,7 @@ int (*get_print_fn(char specifier))(va_list args, parameters_t *parameters)
 	    {'i', print_int},
 	    {'p', print_address},
 	    {'\0', NULL}};
-	int i = 0;
+	unsigned int i = 0;
 
 	while (specifiers[i].type && specifiers[i].fn)
 	{

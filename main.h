@@ -12,13 +12,13 @@
 #define NULL_STRING "(null)"
 #define NULL_POINTER "(nil)"
 
-#define PARAMETERS_INIT                                   \
+#define PARAMS_INIT                                       \
 	{                                         \
 		0, 0, 0, 0, 0, 0, 0, 0, 0 \
 	}
 
 /**
- * struct parameters - struct parameters
+ * struct params - struct params
  * @unsign: unsign
  * @plus_flag: plus_flag
  * @space_flag: space_flag
@@ -30,7 +30,7 @@
  * @l_modifier: l_modifier
  */
 
-typedef struct parameters
+typedef struct params
 {
 	unsigned int unsign;
 	unsigned int space_flag;
@@ -41,7 +41,7 @@ typedef struct parameters
 	unsigned int width;
 	unsigned int h_modifier;
 	unsigned int l_modifier;
-} parameters_t;
+} params_t;
 
 /**
  * struct specifier - struct specifier
@@ -52,58 +52,86 @@ typedef struct parameters
 typedef struct specifier
 {
 	char type;
-	int (*fn)(va_list, parameters_t *);
+	unsigned int (*fn)(va_list, params_t *);
 } specifier_t;
 
 /* char_pack.c  */
 int _putchar(char c);
 int _isdigit(char c);
 
-/*str_pack.c*/
-int _puts(char *str);
-int _strlen(char *str);
-int _print_rev_string(char *str);
-int count_digit(long int num, unsigned int base);
-int print_from_to(char *str, unsigned int start, unsigned int end);
+/*str_pack_1.c*/
+unsigned int _puts(char *str);
+unsigned int _strlen(char *str);
+unsigned int _print_rev_string(char *str);
+unsigned int count_digit(long int num, unsigned int base);
+unsigned int print_from_to(char *str, unsigned int start, unsigned int end);
 
 /*str_pack_2.c*/
 char *str_concat(char *str1, char *str2);
 
-/* print_functions_1.c */
-int print_int(va_list args, parameters_t *parameters);
-int print_unsigned_int(va_list args, parameters_t *parameters);
-int print_bin(va_list args, parameters_t *parameters);
-int print_oct(va_list args, parameters_t *parameters);
-int print_number(char *str, parameters_t *parameters);
+/* get_converter.c*/
+char *convert(long int num, unsigned int base, int is_lower);
 
-/* print_functions_2.c */
-int print_hex(va_list args, parameters_t *parameters);
-int print_HEX(va_list args, parameters_t *parameters);
-int print_address(va_list args, parameters_t *parameters);
-int _print_HEX(unsigned long int num);
+/* print_bin.c */
+unsigned int print_bin(va_list args, params_t *params);
 
-/* print_functions_3.c */
-int print_string(va_list args, parameters_t *parameters);
-int print_rev_string(va_list args, parameters_t *parameters);
-int print_rot13(va_list args, parameters_t *parameters);
-int print_printable_letters(va_list args, parameters_t *parameters);
+/* print_oct.c */
+unsigned int print_oct(va_list args, params_t *params);
 
-/* print_functions_4.c */
-int print_char(va_list args, parameters_t *parameters);
-int print_percent_sign(va_list args, parameters_t *parameters);
+/* print_hex.c */
+unsigned int print_hex(va_list args, params_t *params);
+unsigned int print_HEX(va_list args, params_t *params);
+unsigned int _print_HEX(unsigned long int num);
 
-/* converter.c */
-char *convert(long int num, unsigned int base, unsigned int lower);
+/* print_address.c */
+unsigned int print_address(va_list args, params_t *params);
 
-/*get_parameters.c*/
-int get_flag(char c, parameters_t *parameters);
-int get_modifier(char c, parameters_t *parameters);
+/* print_int.c */
+unsigned int print_int(va_list args, params_t *params);
+
+/* print_unsigned_int.c */
+unsigned int print_unsigned_int(va_list args, params_t *params);
+
+/* print_string.c */
+unsigned int print_string(va_list args, params_t *params);
+
+/* print_rev_string.c */
+unsigned int print_rev_string(va_list args, params_t *params);
+
+/* print_rot13.c */
+unsigned int print_rot13(va_list args, params_t *params);
+
+/* print_printable_letters.c */
+unsigned int print_printable_letters(va_list args, params_t *params);
+
+/* print_percent.c */
+unsigned int print_percent_sign(va_list args, params_t *params);
+
+/* print_char.c */
+unsigned int print_char(va_list args, params_t *params);
+
+/* print_number.c */
+unsigned int print_number(char *str, params_t *params);
+int is_print_number_sign(params_t *params, int is_neg);
+int is_print_space(params_t *params, int is_neg);
+int is_print_pluse_sign(params_t *params, int is_neg);
+
+/* print_number_right_shift.c */
+unsigned int print_number_right_shift(char *str, params_t *params);
+
+/* print_number_left_shift.c */
+unsigned int print_number_left_shift(char *str, params_t *params);
 
 /* init_parameters.c */
-void init_parameters(parameters_t *parameters);
+void init_params(params_t *params);
+
+/* get_parameters.c */
+int get_flag(char c, params_t *params);
+int get_modifier(char c, params_t *params);
+unsigned int get_width(char *format, int i, va_list args, params_t *params);
 
 /* get_specifier.c */
-int (*get_print_fn(char specifier))(va_list args, parameters_t *parameters);
+unsigned int (*get_print_fn(char specifier))(va_list args, params_t *params);
 
 /* _printf.c */
 int _printf(const char *format, ...);
