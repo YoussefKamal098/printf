@@ -114,6 +114,7 @@ unsigned int print_char(va_list args, params_t *params);
 
 /* print_number.c */
 unsigned int print_number(char *str, params_t *params);
+char *handle_precision(char *str, params_t *params);
 int is_print_number_sign(params_t *params, int is_neg);
 int is_print_space(params_t *params, int is_neg);
 int is_print_pluse_sign(params_t *params, int is_neg);

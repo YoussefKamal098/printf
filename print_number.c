@@ -1,6 +1,25 @@
 #include "main.h"
 
 /**
+ *  print_number -  print_number
+ * @str: str
+ * @params: params
+ * Return: return
+ */
+unsigned int print_number(char *str, params_t *params)
+{
+	if (str == NULL || *str == '\0')
+		return (0);
+
+	str = handle_precision(str, params);
+
+	if (params->minus_flag)
+		return (print_number_left_shift(str, params));
+
+	return (print_number_right_shift(str, params));
+}
+
+/**
  * handle_precision -handle_precision
  * @str: str
  * @params: params
@@ -43,25 +62,6 @@ char *handle_precision(char *str, params_t *params)
 		free(temp);
 	}
 	return (str);
-}
-
-/**
- *  print_number -  print_number
- * @str: str
- * @params: params
- * Return: return
- */
-unsigned int print_number(char *str, params_t *params)
-{
-	if (str == NULL || *str == '\0')
-		return (0);
-
-	str = handle_precision(str, params);
-
-	if (params->minus_flag)
-		return (print_number_left_shift(str, params));
-
-	return (print_number_right_shift(str, params));
 }
 
 /**
