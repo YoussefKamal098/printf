@@ -20,7 +20,7 @@ unsigned int print_address(va_list args, params_t *params)
 	if (!num)
 		return (_puts(NULL_POINTER));
 
-	str = convert(num, 16, 1);
+	str = convert(num, 16, 1, 1);
 
 	temp = str;
 	str = str_concat("0x", str);

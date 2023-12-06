@@ -65,14 +65,14 @@ int _isdigit(char c);
 unsigned int _puts(char *str);
 unsigned int _strlen(char *str);
 unsigned int _print_rev_string(char *str);
-unsigned int count_digit(long int num, unsigned int base);
+unsigned int count_digit(unsigned long int num, unsigned int base);
 unsigned int print_from_to(char *str, unsigned int start, unsigned int end);
 
 /*str_pack_2.c*/
 char *str_concat(char *str1, char *str2);
 
 /* get_converter.c*/
-char *convert(long int num, unsigned int base, int is_lower);
+char *convert(long int num, unsigned int base, int is_unsign, int is_lower);
 
 /* print_bin.c */
 unsigned int print_bin(va_list args, params_t *params);

@@ -19,7 +19,7 @@ unsigned int print_oct(va_list args, params_t *params)
 	else
 		num = (unsigned int)va_arg(args, unsigned int);
 
-	str = convert(num, 8, 1);
+	str = convert(num, 8, 1, 1);
 
 	if (params->hashtag_flag)
 	{

@@ -18,7 +18,7 @@ unsigned int print_hex(va_list args, params_t *params)
 	else
 		num = (unsigned int)va_arg(args, unsigned int);
 
-	str = convert(num, 16, 1);
+	str = convert(num, 16, 1, 1);
 
 	if (params->hashtag_flag)
 	{
@@ -53,7 +53,7 @@ unsigned int print_HEX(va_list args, params_t *params)
 	else
 		num = (unsigned int)va_arg(args, unsigned int);
 
-	str = convert(num, 16, 0);
+	str = convert(num, 16, 1, 0);
 
 	if (params->hashtag_flag)
 	{
@@ -79,7 +79,7 @@ unsigned int _print_HEX(unsigned long int num)
 	unsigned int bytes;
 	char *str;
 
-	str = convert(num, 16, 0);
+	str = convert(num, 16, 1, 0);
 	bytes = _puts(str);
 
 	free(str);

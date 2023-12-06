@@ -19,7 +19,7 @@ unsigned int print_int(va_list args, params_t *params)
 	else
 		num = (int)va_arg(args, int);
 
-	str = convert(num, 10, 1);
+	str = convert(num, 10, 0, 1);
 	bytes = print_number(str, params);
 
 	free(str);

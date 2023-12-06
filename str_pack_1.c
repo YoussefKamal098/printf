@@ -74,7 +74,7 @@ unsigned int _print_rev_string(char *str)
  * Return: return
  */
 
-unsigned int count_digit(long int num, unsigned int base)
+unsigned int count_digit(unsigned long int num, unsigned int base)
 {
 	unsigned int len = 0;
 

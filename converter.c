@@ -3,24 +3,26 @@
  * convert - convert
  * @num: num
  * @base: base
+ * @is_unsigned: is_unsigned
  * @is_lower: is_lower
  * Return: return
  */
 
-char *convert(long int num, unsigned int base, int is_lower)
+char *convert(long int num, unsigned int base, int is_unsigned, int is_lower)
 {
 	unsigned int i, str_len = 0;
+	unsigned long int unsigned_num = num;
 	int sign = 0;
 	char *digits = is_lower ? "0123456789abcdef" : "0123456789ABCDEF";
 	char *str;
 
-	if (num < 0)
+	if (!is_unsigned && num < 0)
 	{
-		num *= -1;
+		unsigned_num = -num;
 		sign = 1;
 	}
 
-	str_len = num == 0 ? 1 : count_digit(num, base);
+	str_len = unsigned_num == 0 ? 1 : count_digit(unsigned_num, base);
 
 	if (sign)
 		str_len++;
@@ -33,13 +35,13 @@ char *convert(long int num, unsigned int base, int is_lower)
 	str[str_len] = '\0';
 	i = str_len - 1;
 
-	if (num == 0)
+	if (unsigned_num == 0)
 		str[0] = '0';
 
-	while (num)
+	while (unsigned_num)
 	{
-		str[i--] = digits[num % base];
-		num /= base;
+		str[i--] = digits[unsigned_num % base];
+		unsigned_num /= base;
 	}
 
 	if (sign)

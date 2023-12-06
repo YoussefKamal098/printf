@@ -13,7 +13,7 @@ unsigned int print_bin(va_list args, params_t *params)
 
 	num = va_arg(args, unsigned int);
 
-	str = convert(num, 2, 1);
+	str = convert(num, 2, 1, 1);
 
 	if (params->hashtag_flag)
 	{
