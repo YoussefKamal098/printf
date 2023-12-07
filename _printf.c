@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 					i = format_len - 1;
 
 				except = params.l_modifier ? 'l' : '\0';
-				except = params.h_modifier ? 'h' : '\0';
+				except = params.h_modifier ? 'h' : except;
 				bytes_count += print_from_to((char *)format, start, i, except);
 			}
 		}

@@ -46,6 +46,7 @@ int main(void)
 	_printf("[%.6s]\n", "Youssef Kamal\n");
 	_printf("[%o]\n", 0);
 	_printf("% ");
-	_printf("%y%y%y%  ");
+	_printf("%y%y%y% \n");
+	_printf("%y%y%y%ly");
 	return (0);
 }
