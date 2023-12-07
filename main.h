@@ -131,8 +131,9 @@ void init_params(params_t *params);
 /* get_parameters.c */
 int get_flag(char c, params_t *params);
 int get_modifier(char c, params_t *params);
-unsigned int get_width(char *str, int i, va_list args, params_t *params);
-unsigned int get_precision(char *str, int i, va_list args, params_t *params);
+int get_width(char *format, int i, va_list args, params_t *params);
+int get_precision(char *format, int i, va_list args, params_t *params);
+int get_specifier_params(char *format, va_list args, params_t *params, int i);
 
 /* get_specifier.c */
 unsigned int (*get_print_fn(char specifier))(va_list args, params_t *params);

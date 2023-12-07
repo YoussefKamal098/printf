@@ -43,5 +43,9 @@ int main(void)
 	len = _printf("[%10.5s]\n", "Youssef");
 	_printf("[%d]\n", len);
 	_printf("[%p]\n", (void *)-6);
+	_printf("[%.6s]\n", "Youssef Kamal\n");
+	_printf("[%o]\n", 0);
+	_printf("% ");
+	_printf("%y%y%y%  ");
 	return (0);
 }

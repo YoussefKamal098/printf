@@ -15,7 +15,7 @@ unsigned int print_bin(va_list args, params_t *params)
 
 	str = convert(num, 2, 1, 1);
 
-	if (params->hashtag_flag)
+	if (params->hashtag_flag && num)
 	{
 		temp = str;
 		str = str_concat("0", str);

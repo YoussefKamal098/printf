@@ -20,7 +20,7 @@ unsigned int print_hex(va_list args, params_t *params)
 
 	str = convert(num, 16, 1, 1);
 
-	if (params->hashtag_flag)
+	if (params->hashtag_flag && num)
 	{
 		temp = str;
 		str = str_concat("0x", str);
@@ -55,7 +55,7 @@ unsigned int print_HEX(va_list args, params_t *params)
 
 	str = convert(num, 16, 1, 0);
 
-	if (params->hashtag_flag)
+	if (params->hashtag_flag && num)
 	{
 		temp = str;
 		str = str_concat("0X", str);
