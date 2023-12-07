@@ -11,7 +11,7 @@ unsigned int print_number(char *str, params_t *params)
 	if (str == NULL || *str == '\0')
 		return (0);
 
-	str = handle_precision(str, params);
+	str = handle_number_precision(str, params);
 
 	if (params->minus_flag)
 		return (print_number_left_shift(str, params));
@@ -20,12 +20,12 @@ unsigned int print_number(char *str, params_t *params)
 }
 
 /**
- * handle_precision -handle_precision
+ * handle_number_precision -handle_number_precision
  * @str: str
  * @params: params
  * Return: return
  */
-char *handle_precision(char *str, params_t *params)
+char *handle_number_precision(char *str, params_t *params)
 {
 	unsigned int len = _strlen(str), zeros_len = 0, i;
 	char *zeros_pad, *temp;

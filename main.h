@@ -96,6 +96,7 @@ unsigned int print_unsigned_int(va_list args, params_t *params);
 
 /* print_string.c */
 unsigned int print_string(va_list args, params_t *params);
+unsigned int handle_string_precision(char *str, params_t *params);
 
 /* print_rev_string.c */
 unsigned int print_rev_string(va_list args, params_t *params);
@@ -114,7 +115,7 @@ unsigned int print_char(va_list args, params_t *params);
 
 /* print_number.c */
 unsigned int print_number(char *str, params_t *params);
-char *handle_precision(char *str, params_t *params);
+char *handle_number_precision(char *str, params_t *params);
 int is_print_number_sign(params_t *params, int is_neg);
 int is_print_space(params_t *params, int is_neg);
 int is_print_pluse_sign(params_t *params, int is_neg);
@@ -134,6 +135,10 @@ int get_modifier(char c, params_t *params);
 int get_width(char *format, int i, va_list args, params_t *params);
 int get_precision(char *format, int i, va_list args, params_t *params);
 int get_specifier_params(char *format, va_list args, params_t *params, int i);
+
+/* handle_number_modifier.c */
+long int handle_num_modifier(va_list args, params_t *params);
+unsigned long int handle_unsigned_num_modifier(va_list args, params_t *params);
 
 /* get_specifier.c */
 unsigned int (*get_print_fn(char specifier))(va_list args, params_t *params);

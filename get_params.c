@@ -125,7 +125,6 @@ int get_specifier_params(char *format, va_list args, params_t *params, int i)
 		i++;
 
 	i = get_width((char *)format, i, args, params);
-
 	i = get_precision((char *)format, i, args, params);
 
 	if (get_modifier(format[i], params))

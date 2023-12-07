@@ -12,12 +12,7 @@ unsigned int print_oct(va_list args, params_t *params)
 	unsigned int bytes = 0;
 	char *str, *temp;
 
-	if (params->l_modifier)
-		num = va_arg(args, unsigned long int);
-	else if (params->h_modifier)
-		num = (unsigned short int)va_arg(args, unsigned int);
-	else
-		num = (unsigned int)va_arg(args, unsigned int);
+	num = handle_unsigned_num_modifier(args, params);
 
 	str = convert(num, 8, 1, 1);
 

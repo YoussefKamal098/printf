@@ -37,16 +37,9 @@ int main(void)
 	printf("Len:[%d]\n", len2);
 	_printf("Unknown:[%r]\n");
 	/*printf("Unknown:[%r]\n");*/
-	len = _printf("[%+010d]\n", -76255);
-	_printf("[%d]\n", len);
-	printf("[%30s]\n", "Youssef Samuel Kamal");
-	len = _printf("[%10.5s]\n", "Youssef");
-	_printf("[%d]\n", len);
-	_printf("[%p]\n", (void *)-6);
-	_printf("[%.6s]\n", "Youssef Kamal\n");
-	_printf("[%o]\n", 0);
-	_printf("% ");
-	_printf("%y%y%y% \n");
-	_printf("%y%y%y%ly");
+	len = _printf("%.*s\n", 6, "Best School !\n");
+	len2 = printf("%.*s\n", 6, "Best School !\n");
+	_printf("Len:[%d]\n", len);
+	printf("Len:[%d]\n", len2);
 	return (0);
 }

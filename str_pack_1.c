@@ -99,7 +99,7 @@ unsigned int print_from_to(char *str, int start, int end, char except)
 {
 	unsigned int bytes = 0;
 
-	if (str == NULL)
+	if (str == NULL || start < 0 || end < 0)
 		return (0);
 
 	while (start <= end)

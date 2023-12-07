@@ -12,7 +12,6 @@ unsigned int print_bin(va_list args, params_t *params)
 	char *str, *temp;
 
 	num = va_arg(args, unsigned int);
-
 	str = convert(num, 2, 1, 1);
 
 	if (params->hashtag_flag && num)
