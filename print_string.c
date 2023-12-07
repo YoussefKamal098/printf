@@ -12,7 +12,7 @@ unsigned int print_string(va_list args, params_t *params)
 	unsigned int len, old_len, bytes = 0;
 	char pad_char = ' ';
 	char *str = va_arg(args, char *);
-	int is_end_with_newline;
+	int is_end_with_newline = 0;
 
 	if (str == NULL)
 		str = NULL_STRING;
