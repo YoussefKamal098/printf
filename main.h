@@ -66,7 +66,7 @@ unsigned int _puts(char *str);
 unsigned int _strlen(char *str);
 unsigned int _print_rev_string(char *str);
 unsigned int count_digit(unsigned long int num, unsigned int base);
-unsigned int print_from_to(char *str, unsigned int start, unsigned int end);
+unsigned int print_from_to(char *str, int start, int end, char except);
 
 /*str_pack_2.c*/
 char *str_concat(char *str1, char *str2);

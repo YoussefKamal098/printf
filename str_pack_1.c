@@ -92,9 +92,10 @@ unsigned int count_digit(unsigned long int num, unsigned int base)
  * @str:str
  * @start: start
  * @end: end
+ * @except: except
  * Return: return
  */
-unsigned int print_from_to(char *str, unsigned int start, unsigned int end)
+unsigned int print_from_to(char *str, int start, int end, char except)
 {
 	unsigned int bytes = 0;
 
@@ -103,8 +104,8 @@ unsigned int print_from_to(char *str, unsigned int start, unsigned int end)
 
 	while (start <= end)
 	{
-
-		bytes += _putchar(str[start]);
+		if (str[start] != except)
+			bytes += _putchar(str[start]);
 		start++;
 	}
 	return (bytes);
