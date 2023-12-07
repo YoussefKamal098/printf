@@ -13,7 +13,6 @@ unsigned int print_oct(va_list args, params_t *params)
 	char *str, *temp;
 
 	num = handle_unsigned_num_modifier(args, params);
-
 	str = convert(num, 8, 1, 1);
 
 	if (params->hashtag_flag && num)

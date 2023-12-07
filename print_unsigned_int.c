@@ -12,13 +12,7 @@ unsigned int print_unsigned_int(va_list args, params_t *params)
 	unsigned int bytes;
 	char *str;
 
-	if (params->l_modifier)
-		num = va_arg(args, unsigned long int);
-	else if (params->h_modifier)
-		num = (unsigned short int)va_arg(args, unsigned int);
-	else
-		num = (unsigned int)va_arg(args, unsigned int);
-
+	num = handle_unsigned_num_modifier(args, params);
 	str = convert(num, 10, 1, 1);
 
 	params->unsign = 1;

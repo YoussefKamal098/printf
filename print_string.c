@@ -13,13 +13,11 @@ print_string(va_list args, params_t *params)
 	unsigned int len, bytes = 0;
 	char pad_char = ' ';
 	char *str = va_arg(args, char *);
-	int is_end_with_newline;
 
 	if (str == NULL)
 		str = NULL_STRING;
 
 	len = _strlen(str);
-	is_end_with_newline = str[len - 1] == '\n';
 
 	if (params->precision < len)
 		len = params->precision;
@@ -32,9 +30,6 @@ print_string(va_list args, params_t *params)
 
 	if (!params->minus_flag)
 		bytes += handle_string_precision(str, params);
-
-	if (params->precision < len && is_end_with_newline)
-		bytes += _putchar('\n');
 
 	return (bytes);
 }
