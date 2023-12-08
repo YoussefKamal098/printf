@@ -13,8 +13,6 @@ unsigned int print_address(va_list args, params_t *params)
 	unsigned int bytes = 0;
 	char *str, *temp;
 
-	(void)params;
-
 	num = va_arg(args, unsigned long int);
 
 	if (!num)

@@ -13,7 +13,6 @@ unsigned int print_int(va_list args, params_t *params)
 	char *str;
 
 	num = handle_num_modifier(args, params);
-
 	str = convert(num, 10, 0, 1);
 	bytes = print_number(str, params);
 

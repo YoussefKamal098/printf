@@ -23,7 +23,10 @@ char *str_concat(char *str1, char *str2)
 	str = (char *)malloc(str_len + 1);
 
 	if (str == NULL)
+	{
+		_puts("malloc failed in str_concat function");
 		exit(3);
+	}
 
 	for (i = 0; str1[i] != '\0'; i++)
 		str[i] = str1[i];

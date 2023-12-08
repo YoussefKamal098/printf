@@ -33,26 +33,26 @@ char *handle_number_precision(char *str, params_t *params)
 
 	if (str == NULL)
 		return (NULL);
-
 	if (params->precision == UINT_MAX)
 		return (str);
-
 	if (!params->precision && *str == '0' && !str[1])
 		str = "";
-
 	if (neg)
 	{
 		str++;
 		len--;
 	}
+
 	if (params->precision != UINT_MAX)
 		while (len++ < params->precision)
 			zeros_len++;
 
 	zeros_pad = (char *)malloc(zeros_len + 1);
-
 	if (zeros_pad == NULL)
+	{
+		_puts("malloc failed in handle_number_precision function");
 		exit(4);
+	}
 
 	zeros_pad[zeros_len] = '\0';
 	for (i = 0; i < zeros_len; i++)
@@ -89,8 +89,9 @@ int is_print_number_sign(params_t *params, int is_neg)
  */
 int is_print_space(params_t *params, int is_neg)
 {
-	return (params->space_flag && !params->plus_flag &&
-		!params->unsign && !is_neg);
+	return (
+	    params->space_flag && !params->plus_flag &&
+	    !params->unsign && !is_neg);
 }
 
 /**
@@ -102,6 +103,7 @@ int is_print_space(params_t *params, int is_neg)
 
 int is_print_pluse_sign(params_t *params, int is_neg)
 {
-	return (params->plus_flag && !is_neg &&
-		!params->unsign);
+	return (
+	    params->plus_flag && !is_neg &&
+	    !params->unsign);
 }

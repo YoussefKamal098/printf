@@ -8,7 +8,6 @@
  */
 long int handle_num_modifier(va_list args, params_t *params)
 {
-
 	if (params->l_modifier)
 		return (va_arg(args, long int));
 	else if (params->h_modifier)
@@ -25,7 +24,6 @@ long int handle_num_modifier(va_list args, params_t *params)
  */
 unsigned long int handle_unsigned_num_modifier(va_list args, params_t *params)
 {
-
 	if (params->l_modifier)
 		return (va_arg(args, unsigned long int));
 	else if (params->h_modifier)

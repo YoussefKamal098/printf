@@ -9,15 +9,12 @@
 
 unsigned int print_rot13(va_list args, params_t *params)
 {
-	unsigned int i, j, is_print;
+	unsigned int i = 0, j, is_print;
 	char decrypt[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char encrypt[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	char *str;
+	char *str = va_arg(args, char *);
 
 	(void)params;
-
-	str = va_arg(args, char *);
-	i = 0;
 
 	while (str[i])
 	{

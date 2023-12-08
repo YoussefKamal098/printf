@@ -30,7 +30,10 @@ char *convert(long int num, unsigned int base, int is_unsigned, int is_lower)
 	str = (char *)malloc(str_len + 1);
 
 	if (str == NULL)
+	{
+		_puts("malloc failed in convert function");
 		exit(1);
+	}
 
 	str[str_len] = '\0';
 	i = str_len - 1;
@@ -43,7 +46,6 @@ char *convert(long int num, unsigned int base, int is_unsigned, int is_lower)
 		str[i--] = digits[unsigned_num % base];
 		unsigned_num /= base;
 	}
-
 	if (sign)
 		str[0] = '-';
 

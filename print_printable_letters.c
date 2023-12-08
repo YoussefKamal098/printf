@@ -9,16 +9,13 @@
 
 unsigned int print_printable_letters(va_list args, params_t *params)
 {
-	unsigned int i, bytes;
+	unsigned int i = 0, bytes = 0;
 	int num;
 	char *str;
 
 	(void)params;
 
 	str = va_arg(args, char *);
-
-	i = 0;
-	bytes = 0;
 
 	while (str[i])
 	{

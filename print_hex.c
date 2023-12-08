@@ -41,7 +41,6 @@ unsigned int print_HEX(va_list args, params_t *params)
 	char *str, *temp;
 
 	num = handle_unsigned_num_modifier(args, params);
-
 	str = convert(num, 16, 1, 0);
 
 	if (params->hashtag_flag && num)

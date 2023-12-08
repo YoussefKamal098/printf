@@ -108,5 +108,6 @@ unsigned int print_from_to(char *str, int start, int end, char except)
 			bytes += _putchar(str[start]);
 		start++;
 	}
+
 	return (bytes);
 }

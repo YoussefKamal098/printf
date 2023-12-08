@@ -31,12 +31,12 @@ int get_flag(char c, params_t *params)
 }
 
 /**
- * get_modifier - get_modifier
+ * get_number_modifier - get_number_modifier
  * @c: c
  * @params: params
  * Return: return
  */
-int get_modifier(char c, params_t *params)
+int get_number_modifier(char c, params_t *params)
 {
 	switch (c)
 	{
@@ -62,20 +62,7 @@ int get_modifier(char c, params_t *params)
 
 int get_width(char *format, int i, va_list args, params_t *params)
 {
-	unsigned int width = 0;
-
-	if (format[i] == '*')
-	{
-		width = va_arg(args, unsigned int);
-		i++;
-	}
-	else
-	{
-		while (_isdigit(format[i]))
-			width = width * 10 + (format[i++] - '0');
-	}
-
-	params->width = width;
+	params->width = get_number_field(format, &i, args);
 	return (i);
 }
 
@@ -89,24 +76,11 @@ int get_width(char *format, int i, va_list args, params_t *params)
  */
 int get_precision(char *format, int i, va_list args, params_t *params)
 {
-	unsigned int precision = 0;
-
 	if (format[i] != '.')
 		return (i);
 	i++;
+	params->precision = get_number_field(format, &i, args);
 
-	if (format[i] == '*')
-	{
-		precision = va_arg(args, unsigned int);
-		i++;
-	}
-	else
-	{
-		while (_isdigit(format[i]))
-			precision = precision * 10 + (format[i++] - '0');
-	}
-
-	params->precision = precision;
 	return (i);
 }
 
@@ -127,7 +101,7 @@ int get_specifier_params(char *format, va_list args, params_t *params, int i)
 	i = get_width((char *)format, i, args, params);
 	i = get_precision((char *)format, i, args, params);
 
-	if (get_modifier(format[i], params))
+	if (get_number_modifier(format[i], params))
 		i++;
 
 	return (i);

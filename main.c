@@ -35,11 +35,11 @@ int main(void)
 	len2 = printf("Percent:[%%]\n");
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
-	_printf("Unknown:[%r]\n");
+	/*_printf("Unknown:[%r]\n");*/
 	/*printf("Unknown:[%r]\n");*/
 	len = _printf("%.*s\n", 6, "Best School !\n");
 	len2 = printf("%.*s\n", 6, "Best School !\n");
-	_printf("Len:[%d]\n", len);
-	printf("Len:[%d]\n", len2);
+	_printf("Len:[%010d]\n", len);
+	printf("Len:[%0*d]\n", 10, len2);
 	return (0);
 }
