@@ -8,15 +8,26 @@
  */
 unsigned int print_number(char *str, params_t *params)
 {
+	unsigned int bytes = 0;
+	char *temp = str;
+
 	if (str == NULL || *str == '\0')
 		return (0);
 
 	str = handle_number_precision(str, params);
 
-	if (params->minus_flag)
-		return (print_number_left_shift(str, params));
+	if (str == NULL)
+		return (0);
 
-	return (print_number_right_shift(str, params));
+	if (params->minus_flag)
+		bytes = print_number_left_shift(str, params);
+	else
+		bytes = print_number_right_shift(str, params);
+
+	if (temp != str)
+		free(str);
+
+	return (bytes);
 }
 
 /**
@@ -49,16 +60,14 @@ char *handle_number_precision(char *str, params_t *params)
 
 	zeros_pad = (char *)malloc(zeros_len + 1);
 	if (zeros_pad == NULL)
-	{
-		_puts("malloc failed in handle_number_precision function");
-		exit(4);
-	}
+		return (NULL);
 
 	zeros_pad[zeros_len] = '\0';
 	for (i = 0; i < zeros_len; i++)
 		zeros_pad[i] = '0';
 
 	str = str_concat(zeros_pad, str);
+	free(zeros_pad);
 
 	if (neg)
 	{

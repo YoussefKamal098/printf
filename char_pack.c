@@ -13,10 +13,8 @@ int _putchar(char c)
 	if (c == BUFFER_FLUSH || i >= BUFFER_SIZE)
 	{
 		if (write(1, buffer, i) == -1)
-		{
-			_puts("write failed in _putchar function");
-			exit(2);
-		}
+			return (0);
+
 		i = 0;
 	}
 

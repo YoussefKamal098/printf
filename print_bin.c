@@ -14,11 +14,17 @@ unsigned int print_bin(va_list args, params_t *params)
 	num = va_arg(args, unsigned int);
 	str = convert(num, 2, 1, 1);
 
+	if (str == NULL)
+		return (0);
+
 	if (params->hashtag_flag && num)
 	{
 		temp = str;
 		str = str_concat("0", str);
 		free(temp);
+
+		if (str == NULL)
+			return (0);
 	}
 
 	params->unsign = 1;

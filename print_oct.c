@@ -15,11 +15,18 @@ unsigned int print_oct(va_list args, params_t *params)
 	num = handle_unsigned_num_modifier(args, params);
 	str = convert(num, 8, 1, 1);
 
+	if (str == NULL)
+		return (0);
+
 	if (params->hashtag_flag && num)
 	{
 		temp = str;
 		str = str_concat("0", str);
+
 		free(temp);
+
+		if (str == NULL)
+			return (0);
 	}
 
 	params->unsign = 1;

@@ -14,11 +14,17 @@ unsigned int print_hex(va_list args, params_t *params)
 	num = handle_unsigned_num_modifier(args, params);
 	str = convert(num, 16, 1, 1);
 
+	if (str == NULL)
+		return (0);
+
 	if (params->hashtag_flag && num)
 	{
 		temp = str;
 		str = str_concat("0x", str);
 		free(temp);
+
+		if (str == NULL)
+			return (0);
 	}
 
 	params->unsign = 1;
@@ -43,11 +49,17 @@ unsigned int print_HEX(va_list args, params_t *params)
 	num = handle_unsigned_num_modifier(args, params);
 	str = convert(num, 16, 1, 0);
 
+	if (str == NULL)
+		return (0);
+
 	if (params->hashtag_flag && num)
 	{
 		temp = str;
 		str = str_concat("0X", str);
 		free(temp);
+
+		if (str == NULL)
+			return (0);
 	}
 
 	params->unsign = 1;
@@ -68,6 +80,10 @@ unsigned int _print_HEX(unsigned long int num)
 	char *str;
 
 	str = convert(num, 16, 1, 0);
+
+	if (str == NULL)
+		return (0);
+
 	bytes = _puts(str);
 
 	free(str);

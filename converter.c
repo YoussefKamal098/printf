@@ -28,12 +28,8 @@ char *convert(long int num, unsigned int base, int is_unsigned, int is_lower)
 		str_len++;
 
 	str = (char *)malloc(str_len + 1);
-
 	if (str == NULL)
-	{
-		_puts("malloc failed in convert function");
-		exit(1);
-	}
+		return (NULL);
 
 	str[str_len] = '\0';
 	i = str_len - 1;

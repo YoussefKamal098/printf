@@ -39,7 +39,19 @@ int main(void)
 	/*printf("Unknown:[%r]\n");*/
 	len = _printf("%.*s\n", 6, "Best School !\n");
 	len2 = printf("%.*s\n", 6, "Best School !\n");
-	_printf("Len:[%010d]\n", len);
-	printf("Len:[%0*d]\n", 10, len2);
+	_printf("Len:[%d]\n", len);
+	printf("Len:[%d]\n", len2);
+	len = printf("[%-6.*d][%-6.*i][%-6.*d[%-6.*i][%-6.*d]%-6.*i]\n", 6, INT_MAX, 6, INT_MAX, 6, INT_MIN, 6, INT_MIN, 6, 0, 6, 0);
+	len2 = _printf("[%-6.*d][%-6.*i][%-6.*d[%-6.*i][%-6.*d]%-6.*i]\n", 6, INT_MAX, 6, INT_MAX, 6, INT_MIN, 6, INT_MIN, 6, 0, 6, 0);
+	printf("Len:[%d]\n", len);
+	_printf("Len:[%d]\n", len2);
+	len = printf("[%-6.*d][%-6.*i][%-6.*d][%-6.*i]\n", 6, 98, 6, 98, 6, -98, 6, -98);
+	len2 = _printf("[%-6.*d][%-6.*i][%-6.*d][%-6.*i]\n", 6, 98, 6, 98, 6, -98, 6, -98);
+	printf("Len:[%d]\n", len);
+	_printf("Len:[%d]\n", len2);
+	len = printf("[%-6.*d][%-6.*i][%-6.*d][%-6.*i]\n", 0, 98, 0, 98, 0, -98, 0, -98);
+	len2 = _printf("[%-6.*d][%-6.*i][%-6.*d][%-6.*i]\n", 0, 98, 0, 98, 0, -98, 0, -98);
+	printf("Len:[%d]\n", len);
+	_printf("Len:[%d]\n", len2);
 	return (0);
 }

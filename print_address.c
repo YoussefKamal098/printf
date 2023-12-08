@@ -19,10 +19,15 @@ unsigned int print_address(va_list args, params_t *params)
 		return (_puts(NULL_POINTER));
 
 	str = convert(num, 16, 1, 1);
+	if (str == NULL)
+		return (0);
 
 	temp = str;
 	str = str_concat("0x", str);
 	free(temp);
+
+	if (str == NULL)
+		return (0);
 
 	params->unsign = 1;
 	bytes += print_number(str, params);
