@@ -22,7 +22,7 @@ These arguments are placed using the percentage '%' operator
 
 
 Secrets of printfby Don colton
-[Download PDF](pdfs/secrets_of_printf.pdf)
+[Download PDF](pdfs/Secrets_of_printf.pdf)
 
 ------------
 
