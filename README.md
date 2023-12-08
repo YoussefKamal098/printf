@@ -5,7 +5,7 @@ ALX PRINTF PROJECT
 
 ------------
 
-![Printf Image](Images/printf.jpeg)
+![Printf Image](images/printf.jpeg)
 
 The printf function sends formatted output to stdout.
 A custom _printf() for learning purposes was developed by cohort  #8 students Nicks and Musa parsanka.
@@ -22,7 +22,7 @@ These arguments are placed using the percentage '%' operator
 
 
 Secrets of printfby Don colton
-[Download PDF](pdfs/Secrets_of_printf.pdf)
+[Download PDF](pdfs/secrets_of_printf.pdf)
 
 ------------
 
