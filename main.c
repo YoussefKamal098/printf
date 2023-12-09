@@ -48,7 +48,7 @@ int main(void)
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
 
-	printf("--------------------------------------------------\n");
+	/*printf("--------------------------------------------------\n");
 
 	len = printf("[%-6.*d];[%-6.*i]\n[%-6.*d];[%-6.*i]\n[%-6.*d];[%-6.*i]\n", 6, INT_MAX, 6, INT_MAX, 6, INT_MIN, 6, INT_MIN, 6, 0, 6, 0);
 	printf("Len:[%d]\n", len);
@@ -150,7 +150,7 @@ int main(void)
 	len2 = _printf("[%6.0d];[%6.0i]\n[%6.0d];[%6.0i]\n", 98, 98, -98, -98);
 	_printf("Len:[%d]\n", len2);
 	len2 = _printf("[%6.d];[%6.i]\n[%6.d];[%6.i]\n", 98, 98, -98, -98);
-	_printf("Len:[%d]\n", len2);
+	_printf("Len:[%d]\n", len2);*/
 
 	return (0);
 }
