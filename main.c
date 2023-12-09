@@ -37,21 +37,120 @@ int main(void)
 	printf("Len:[%d]\n", len2);
 	/*_printf("Unknown:[%r]\n");*/
 	/*printf("Unknown:[%r]\n");*/
-	len = _printf("%.*s\n", 6, "Best School !\n");
-	len2 = printf("%.*s\n", 6, "Best School !\n");
+
+	len = printf("%.*s\n", 6, "Best School !\n");
+	len2 = _printf("%.*s\n", 6, "Best School !\n");
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
-	len = printf("[%-6.*d][%-6.*i][%-6.*d[%-6.*i][%-6.*d]%-6.*i]\n", 6, INT_MAX, 6, INT_MAX, 6, INT_MIN, 6, INT_MIN, 6, 0, 6, 0);
-	len2 = _printf("[%-6.*d][%-6.*i][%-6.*d[%-6.*i][%-6.*d]%-6.*i]\n", 6, INT_MAX, 6, INT_MAX, 6, INT_MIN, 6, INT_MIN, 6, 0, 6, 0);
+
+	len = printf("%.6s\n", "Best School !\n");
+	len2 = _printf("%.6s\n", "Best School !\n");
+	_printf("Len:[%d]\n", len);
+	printf("Len:[%d]\n", len2);
+
+	printf("--------------------------------------------------\n");
+
+	len = printf("[%-6.*d];[%-6.*i]\n[%-6.*d];[%-6.*i]\n[%-6.*d];[%-6.*i]\n", 6, INT_MAX, 6, INT_MAX, 6, INT_MIN, 6, INT_MIN, 6, 0, 6, 0);
 	printf("Len:[%d]\n", len);
-	_printf("Len:[%d]\n", len2);
-	len = printf("[%-6.*d][%-6.*i][%-6.*d][%-6.*i]\n", 6, 98, 6, 98, 6, -98, 6, -98);
-	len2 = _printf("[%-6.*d][%-6.*i][%-6.*d][%-6.*i]\n", 6, 98, 6, 98, 6, -98, 6, -98);
+	len = printf("[%-6.*d];[%-6.*i]\n[%-6.*d];[%-6.*i]\n[%-6.*d];[%-6.*i]\n", 0, INT_MAX, 0, INT_MAX, 0, INT_MIN, 0, INT_MIN, 0, 0, 0, 0);
 	printf("Len:[%d]\n", len);
-	_printf("Len:[%d]\n", len2);
-	len = printf("[%-6.*d][%-6.*i][%-6.*d][%-6.*i]\n", 0, 98, 0, 98, 0, -98, 0, -98);
-	len2 = _printf("[%-6.*d][%-6.*i][%-6.*d][%-6.*i]\n", 0, 98, 0, 98, 0, -98, 0, -98);
+	len = printf("[%-6.*d];[%-6.*i]\n[%-6.*d];[%-6.*i]\n", 6, 98, 6, 98, 6, -98, 6, -98);
 	printf("Len:[%d]\n", len);
+	len = printf("[%-6.*d];[%-6.*i]\n[%-6.*d];[%-6.*i]\n", 0, 98, 0, 98, 0, -98, 0, -98);
+	printf("Len:[%d]\n", len);
+
+	printf("####################################################\n");
+
+	len2 = _printf("[%-6.*d];[%-6.*i]\n[%-6.*d];[%-6.*i]\n[%-6.*d];[%-6.*i]\n", 6, INT_MAX, 6, INT_MAX, 6, INT_MIN, 6, INT_MIN, 6, 0, 6, 0);
 	_printf("Len:[%d]\n", len2);
+	len2 = _printf("[%-6.*d];[%-6.*i]\n[%-6.*d];[%-6.*i]\n[%-6.*d];[%-6.*i]\n", 0, INT_MAX, 0, INT_MAX, 0, INT_MIN, 0, INT_MIN, 0, 0, 0, 0);
+	_printf("Len:[%d]\n", len2);
+	len2 = _printf("[%-6.*d];[%-6.*i]\n[%-6.*d];[%-6.*i]\n", 6, 98, 6, 98, 6, -98, 6, -98);
+	_printf("Len:[%d]\n", len2);
+	len2 = _printf("[%-6.*d];[%-6.*i]\n[%-6.*d];[%-6.*i]\n", 0, 98, 0, 98, 0, -98, 0, -98);
+	_printf("Len:[%d]\n", len2);
+
+	printf("--------------------------------------------------\n");
+
+	len = printf("[%-6.6d];[%-6.6i]\n[%-6.6d];[%-6.6i]\n[%-6.6d];[%-6.6i]\n", INT_MAX, INT_MAX, INT_MIN, INT_MIN, 0, 0);
+	printf("Len:[%d]\n", len);
+	len = printf("[%-6.0d];[%-6.0i]\n[%-6.0d];[%-6.0i]\n[%-6.0d];[%-6.0i]\n", INT_MAX, INT_MAX, INT_MIN, INT_MIN, 0, 0);
+	printf("Len:[%d]\n", len);
+	len = printf("[%-6.d];[%-6.i]\n[%-6.d];[%-6.i]\n[%-6.d];[%-6.i]\n", INT_MAX, INT_MAX, INT_MIN, INT_MIN, 0, 0);
+	printf("Len:[%d]\n", len);
+	len = printf("[%-6.6d];[%-6.6i]\n[%-6.6d];[%-6.6i]\n", 98, 98, -98, -98);
+	printf("Len:[%d]\n", len);
+	len = printf("[%-6.0d];[%-6.0i]\n[%-6.0d];[%-6.0i]\n", 98, 98, -98, -98);
+	printf("Len:[%d]\n", len);
+	len = printf("[%-6.d];[%-6.i]\n[%-6.d];[%-6.i]\n", 98, 98, -98, -98);
+	printf("Len:[%d]\n", len);
+
+	printf("####################################################\n");
+
+	len2 = _printf("[%-6.6d];[%-6.6i]\n[%-6.6d];[%-6.6i]\n[%-6.6d];[%-6.6i]\n", INT_MAX, INT_MAX, INT_MIN, INT_MIN, 0, 0);
+	_printf("Len:[%d]\n", len2);
+	len2 = _printf("[%-6.0d];[%-6.0i]\n[%-6.0d];[%-6.0i]\n[%-6.0d];[%-6.0i]\n", INT_MAX, INT_MAX, INT_MIN, INT_MIN, 0, 0);
+	_printf("Len:[%d]\n", len2);
+	len2 = _printf("[%-6.d];[%-6.i]\n[%-6.d];[%-6.i]\n[%-6.d];[%-6.i]\n", INT_MAX, INT_MAX, INT_MIN, INT_MIN, 0, 0);
+	_printf("Len:[%d]\n", len2);
+	len2 = _printf("[%-6.6d];[%-6.6i]\n[%-6.6d];[%-6.6i]\n", 98, 98, -98, -98);
+	_printf("Len:[%d]\n", len2);
+	len2 = _printf("[%-6.0d];[%-6.0i]\n[%-6.0d];[%-6.0i]\n", 98, 98, -98, -98);
+	_printf("Len:[%d]\n", len2);
+	len2 = _printf("[%-6.d];[%-6.i]\n[%-6.d];[%-6.i]\n", 98, 98, -98, -98);
+	printf("Len:[%d]\n", len2);
+
+	printf("--------------------------------------------------\n");
+
+	len = printf("[%6.*d];[%6.*i]\n[%6.*d];[%6.*i]\n[%6.*d];[%6.*i]\n", 6, INT_MAX, 6, INT_MAX, 6, INT_MIN, 6, INT_MIN, 6, 0, 6, 0);
+	printf("Len:[%d]\n", len);
+	len = printf("[%6.*d];[%6.*i]\n[%6.*d];[%6.*i]\n[%6.*d];[%6.*i]\n", 0, INT_MAX, 0, INT_MAX, 0, INT_MIN, 0, INT_MIN, 0, 0, 0, 0);
+	printf("Len:[%d]\n", len);
+	len = printf("[%6.*d];[%6.*i]\n[%6.*d];[%6.*i]\n", 6, 98, 6, 98, 6, -98, 6, -98);
+	printf("Len:[%d]\n", len);
+	len = printf("[%6.*d];[%6.*i]\n[%6.*d];[%6.*i]\n", 0, 98, 0, 98, 0, -98, 0, -98);
+	printf("Len:[%d]\n", len);
+
+	printf("####################################################\n");
+
+	len2 = _printf("[%6.*d];[%6.*i]\n[%6.*d];[%6.*i]\n[%6.*d];[%6.*i]\n", 6, INT_MAX, 6, INT_MAX, 6, INT_MIN, 6, INT_MIN, 6, 0, 6, 0);
+	_printf("Len:[%d]\n", len2);
+	len2 = _printf("[%6.*d];[%6.*i]\n[%6.*d];[%6.*i]\n[%6.*d];[%6.*i]\n", 0, INT_MAX, 0, INT_MAX, 0, INT_MIN, 0, INT_MIN, 0, 0, 0, 0);
+	_printf("Len:[%d]\n", len2);
+	len2 = _printf("[%6.*d];[%6.*i]\n[%6.*d];[%6.*i]\n", 6, 98, 6, 98, 6, -98, 6, -98);
+	_printf("Len:[%d]\n", len2);
+	len2 = _printf("[%6.*d];[%6.*i]\n[%6.*d];[%6.*i]\n", 0, 98, 0, 98, 0, -98, 0, -98);
+	_printf("Len:[%d]\n", len2);
+
+	printf("--------------------------------------------------\n");
+
+	len = printf("[%6.6d];[%6.6i]\n[%6.6d];[%6.6i]\n[%6.6d];[%6.6i]\n", INT_MAX, INT_MAX, INT_MIN, INT_MIN, 0, 0);
+	printf("Len:[%d]\n", len);
+	len = printf("[%6.0d];[%6.0i]\n[%6.0d];[%6.0i]\n[%6.0d];[%6.0i]\n", INT_MAX, INT_MAX, INT_MIN, INT_MIN, 0, 0);
+	printf("Len:[%d]\n", len);
+	len = printf("[%6.d];[%6.i]\n[%6.d];[%6.i]\n[%6.d];[%6.i]\n", INT_MAX, INT_MAX, INT_MIN, INT_MIN, 0, 0);
+	printf("Len:[%d]\n", len);
+	len = printf("[%6.6d];[%6.6i]\n[%6.6d];[%6.6i]\n", 98, 98, -98, -98);
+	printf("Len:[%d]\n", len);
+	len = printf("[%6.0d];[%6.0i]\n[%6.0d];[%6.0i]\n", 98, 98, -98, -98);
+	printf("Len:[%d]\n", len);
+	len = printf("[%6.d];[%6.i]\n[%6.d];[%6.i]\n", 98, 98, -98, -98);
+	printf("Len:[%d]\n", len);
+
+	printf("####################################################\n");
+
+	len2 = _printf("[%6.6d];[%6.6i]\n[%6.6d];[%6.6i]\n[%6.6d];[%6.6i]\n", INT_MAX, INT_MAX, INT_MIN, INT_MIN, 0, 0);
+	_printf("Len:[%d]\n", len2);
+	len2 = _printf("[%6.0d];[%6.0i]\n[%6.0d];[%6.0i]\n[%6.0d];[%6.0i]\n", INT_MAX, INT_MAX, INT_MIN, INT_MIN, 0, 0);
+	_printf("Len:[%d]\n", len2);
+	len2 = _printf("[%6.d];[%6.i]\n[%6.d];[%6.i]\n[%6.d];[%6.i]\n", INT_MAX, INT_MAX, INT_MIN, INT_MIN, 0, 0);
+	_printf("Len:[%d]\n", len2);
+	len2 = _printf("[%6.6d];[%6.6i]\n[%6.6d];[%6.6i]\n", 98, 98, -98, -98);
+	_printf("Len:[%d]\n", len2);
+	len2 = _printf("[%6.0d];[%6.0i]\n[%6.0d];[%6.0i]\n", 98, 98, -98, -98);
+	_printf("Len:[%d]\n", len2);
+	len2 = _printf("[%6.d];[%6.i]\n[%6.d];[%6.i]\n", 98, 98, -98, -98);
+	_printf("Len:[%d]\n", len2);
+
 	return (0);
 }

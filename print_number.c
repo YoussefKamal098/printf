@@ -38,9 +38,9 @@ unsigned int print_number(char *str, params_t *params)
  */
 char *handle_number_precision(char *str, params_t *params)
 {
-	unsigned int len = _strlen(str), zeros_len = 0, i;
+	unsigned int len, zeros_len = 0, i;
 	char *zeros_pad, *temp;
-	int neg = *str == '-';
+	int is_neg = *str == '-';
 
 	if (str == NULL)
 		return (NULL);
@@ -48,11 +48,11 @@ char *handle_number_precision(char *str, params_t *params)
 		return (str);
 	if (!params->precision && *str == '0' && !str[1])
 		str = "";
-	if (neg)
-	{
+
+	if (is_neg)
 		str++;
-		len--;
-	}
+
+	len = _strlen(str);
 
 	if (params->precision != UINT_MAX)
 		while (len++ < params->precision)
@@ -69,7 +69,7 @@ char *handle_number_precision(char *str, params_t *params)
 	str = str_concat(zeros_pad, str);
 	free(zeros_pad);
 
-	if (neg)
+	if (is_neg)
 	{
 		temp = str;
 		str = str_concat("-", str);

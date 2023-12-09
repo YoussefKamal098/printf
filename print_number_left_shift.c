@@ -12,16 +12,14 @@ unsigned int print_number_left_shift(char *str, params_t *params)
 	int is_neg = *str == '-';
 	char pad_char = ' ';
 
-	if (str == NULL || *str == '\0' || !params->minus_flag)
+	if (str == NULL || !params->minus_flag)
 		return (0);
+
+	if (is_neg)
+		str++;
 
 	len = _strlen(str);
 
-	if (is_neg)
-	{
-		str++;
-		len--;
-	}
 	if (is_print_space(params, is_neg))
 	{
 		bytes += _putchar(' ');

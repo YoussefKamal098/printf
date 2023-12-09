@@ -17,7 +17,7 @@ These arguments are placed using the percentage '%' operator
 
 
 
-Secrets of printfby Don colton
+Secrets of printf by Don colton
 [Download PDF](https://www.academia.edu/10297206/Secrets_of_printf_)
 
 ------------
