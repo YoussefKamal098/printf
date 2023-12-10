@@ -7,7 +7,7 @@
  * Return: return
  */
 
-unsigned int print_char(va_list args, params_t *params)
+int print_char(va_list args, params_t *params)
 {
 	unsigned int bytes = 0, len = 1;
 	char c = va_arg(args, int), pad_char = ' ';

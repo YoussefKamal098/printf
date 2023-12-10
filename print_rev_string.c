@@ -6,7 +6,7 @@
  * @params: params
  * Return: return
  */
-unsigned int print_rev_string(va_list args, params_t *params)
+int print_rev_string(va_list args, params_t *params)
 {
 	char *str = va_arg(args, char *);
 

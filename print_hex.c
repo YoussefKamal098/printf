@@ -5,7 +5,7 @@
  * @params: params
  * Return: return
  */
-unsigned int print_hex(va_list args, params_t *params)
+int print_hex(va_list args, params_t *params)
 {
 	unsigned long int num;
 	unsigned int bytes = 0;
@@ -40,7 +40,7 @@ unsigned int print_hex(va_list args, params_t *params)
  * @params: params
  * Return: return
  */
-unsigned int print_HEX(va_list args, params_t *params)
+int print_HEX(va_list args, params_t *params)
 {
 	unsigned long int num;
 	unsigned int bytes = 0;
@@ -74,7 +74,7 @@ unsigned int print_HEX(va_list args, params_t *params)
  * @num: num
  * Return: return
  */
-unsigned int _print_HEX(unsigned long int num)
+int _print_HEX(unsigned long int num)
 {
 	unsigned int bytes;
 	char *str;

@@ -60,10 +60,9 @@ int get_number_modifier(char c, params_t *params)
  * Return: return
  */
 
-int get_width(char *format, int i, va_list args, params_t *params)
+void get_width(char *format, int *i, va_list args, params_t *params)
 {
-	params->width = get_number_field(format, &i, args);
-	return (i);
+	params->width = get_number_field(format, i, args);
 }
 
 /**
@@ -74,18 +73,16 @@ int get_width(char *format, int i, va_list args, params_t *params)
  * @params: params
  * Return: return
  */
-int get_precision(char *format, int i, va_list args, params_t *params)
+void get_precision(char *format, int *i, va_list args, params_t *params)
 {
-	if (format[i] != '.')
-		return (i);
-	i++;
-	params->precision = get_number_field(format, &i, args);
-
-	return (i);
+	if (format[*i] != '.')
+		return;
+	*i = *i + 1;
+	params->precision = get_number_field(format, i, args);
 }
 
 /**
- * get_specifier_params - get_specifier_params
+ * get_specifier_param - get_specifier_param
  * @format: format
  * @params: params
  * @args: args
@@ -93,16 +90,14 @@ int get_precision(char *format, int i, va_list args, params_t *params)
  * Return: return
  */
 
-int get_specifier_params(char *format, va_list args, params_t *params, int i)
+void get_specifier_param(char *format, int *i, va_list args, params_t *params)
 {
-	while (get_flag(format[i], params))
-		i++;
+	while (get_flag(format[*i], params))
+		*i = *i + 1;
 
-	i = get_width((char *)format, i, args, params);
-	i = get_precision((char *)format, i, args, params);
+	get_width((char *)format, i, args, params);
+	get_precision((char *)format, i, args, params);
 
-	if (get_number_modifier(format[i], params))
-		i++;
-
-	return (i);
+	if (get_number_modifier(format[*i], params))
+		*i = *i + 1;
 }

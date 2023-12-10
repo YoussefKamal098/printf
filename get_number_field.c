@@ -8,22 +8,23 @@
  * Return: return
  */
 
-unsigned int get_number_field(char *format, int *i, va_list args)
+int get_number_field(char *format, int *i, va_list args)
 {
 	unsigned int num = 0;
-	int j = *i;
 
-	if (format[j] == '*')
+	if (format[*i] == '*')
 	{
 		num = va_arg(args, unsigned int);
-		j++;
+		*i = *i + 1;
 	}
 	else
 	{
-		while (_isdigit(format[j]))
-			num = num * 10 + (format[j++] - '0');
+		while (_isdigit(format[*i]))
+		{
+			num = num * 10 + (format[*i] - '0');
+			*i = *i + 1;
+		}
 	}
 
-	*i = j;
 	return (num);
 }

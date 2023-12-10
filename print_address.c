@@ -7,7 +7,7 @@
  * Return: return
  */
 
-unsigned int print_address(va_list args, params_t *params)
+int print_address(va_list args, params_t *params)
 {
 	unsigned long int num;
 	unsigned int bytes = 0;

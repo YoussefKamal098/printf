@@ -6,7 +6,7 @@
  * @params: params
  * Return: return
  */
-unsigned int print_bin(va_list args, params_t *params)
+int print_bin(va_list args, params_t *params)
 {
 	unsigned int num, bytes = 0;
 	char *str, *temp;

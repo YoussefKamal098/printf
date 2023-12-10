@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * get_print_fn - get_print_fn
+ * get_specifier_printer - get_specifier_printer
  * @specifier: specifier
  * Return: return
  */
 
-unsigned int (*get_print_fn(char specifier))(va_list args, params_t *params)
+int (*get_specifier_printer(char specifier))(va_list args, params_t *params)
 {
 	specifier_t specifiers[] = {
 	    {'c', print_char},

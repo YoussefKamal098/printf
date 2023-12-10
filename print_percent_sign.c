@@ -7,7 +7,7 @@
  * Return: return
  */
 
-unsigned int print_percent_sign(va_list args, params_t *params)
+int print_percent_sign(va_list args, params_t *params)
 {
 	(void)args;
 	(void)params;

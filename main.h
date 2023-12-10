@@ -54,7 +54,7 @@ typedef struct params
 typedef struct specifier
 {
 	char type;
-	unsigned int (*fn)(va_list, params_t *);
+	int (*fn)(va_list, params_t *);
 } specifier_t;
 
 /* char_pack.c  */
@@ -75,56 +75,56 @@ char *str_concat(char *str1, char *str2);
 char *convert(long int num, unsigned int base, int is_unsign, int is_lower);
 
 /* print_bin.c */
-unsigned int print_bin(va_list args, params_t *params);
+int print_bin(va_list args, params_t *params);
 
 /* print_oct.c */
-unsigned int print_oct(va_list args, params_t *params);
+int print_oct(va_list args, params_t *params);
 
 /* print_hex.c */
-unsigned int print_hex(va_list args, params_t *params);
-unsigned int print_HEX(va_list args, params_t *params);
-unsigned int _print_HEX(unsigned long int num);
+int print_hex(va_list args, params_t *params);
+int print_HEX(va_list args, params_t *params);
+int _print_HEX(unsigned long int num);
 
 /* print_address.c */
-unsigned int print_address(va_list args, params_t *params);
+int print_address(va_list args, params_t *params);
 
 /* print_int.c */
-unsigned int print_int(va_list args, params_t *params);
+int print_int(va_list args, params_t *params);
 
 /* print_unsigned_int.c */
-unsigned int print_unsigned_int(va_list args, params_t *params);
+int print_unsigned_int(va_list args, params_t *params);
 
 /* print_string.c */
-unsigned int print_string(va_list args, params_t *params);
-unsigned int handle_string_precision(char *str, params_t *params);
+int print_string(va_list args, params_t *params);
+int handle_string_precision(char *str, params_t *params);
 
 /* print_rev_string.c */
-unsigned int print_rev_string(va_list args, params_t *params);
+int print_rev_string(va_list args, params_t *params);
 
 /* print_rot13.c */
-unsigned int print_rot13(va_list args, params_t *params);
+int print_rot13(va_list args, params_t *params);
 
 /* print_printable_letters.c */
-unsigned int print_printable_letters(va_list args, params_t *params);
+int print_printable_letters(va_list args, params_t *params);
 
 /* print_percent.c */
-unsigned int print_percent_sign(va_list args, params_t *params);
+int print_percent_sign(va_list args, params_t *params);
 
 /* print_char.c */
-unsigned int print_char(va_list args, params_t *params);
+int print_char(va_list args, params_t *params);
 
 /* print_number.c */
-unsigned int print_number(char *str, params_t *params);
+int print_number(char *str, params_t *params);
 char *handle_number_precision(char *str, params_t *params);
 int is_print_number_sign(params_t *params, int is_neg);
 int is_print_space(params_t *params, int is_neg);
 int is_print_pluse_sign(params_t *params, int is_neg);
 
 /* print_number_right_shift.c */
-unsigned int print_number_right_shift(char *str, params_t *params);
+int print_number_right_shift(char *str, params_t *params);
 
 /* print_number_left_shift.c */
-unsigned int print_number_left_shift(char *str, params_t *params);
+int print_number_left_shift(char *str, params_t *params);
 
 /* init_parameters.c */
 void init_params(params_t *params);
@@ -132,19 +132,19 @@ void init_params(params_t *params);
 /* get_parameters.c */
 int get_flag(char c, params_t *params);
 int get_number_modifier(char c, params_t *params);
-int get_width(char *format, int i, va_list args, params_t *params);
-int get_precision(char *format, int i, va_list args, params_t *params);
-int get_specifier_params(char *format, va_list args, params_t *params, int i);
+void get_width(char *format, int *i, va_list args, params_t *params);
+void get_precision(char *format, int *i, va_list args, params_t *params);
+void get_specifier_param(char *format, int *i, va_list args, params_t *params);
 
 /* get_number_field.c */
-unsigned int get_number_field(char *format, int *i, va_list args);
+int get_number_field(char *format, int *i, va_list args);
 
 /* handle_number_modifier.c */
 long int handle_num_modifier(va_list args, params_t *params);
 unsigned long int handle_unsigned_num_modifier(va_list args, params_t *params);
 
 /* get_specifier.c */
-unsigned int (*get_print_fn(char specifier))(va_list args, params_t *params);
+int (*get_specifier_printer(char specifier))(va_list args, params_t *params);
 
 /* _printf.c */
 int _printf(const char *format, ...);

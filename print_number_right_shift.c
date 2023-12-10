@@ -7,7 +7,7 @@
  * Return: return
  */
 
-unsigned int print_number_right_shift(char *str, params_t *params)
+int print_number_right_shift(char *str, params_t *params)
 {
 	unsigned int len, bytes = 0;
 	int is_neg = *str == '-';

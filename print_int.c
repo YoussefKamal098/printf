@@ -6,7 +6,7 @@
  * @params: params
  * Return: return
  */
-unsigned int print_int(va_list args, params_t *params)
+int print_int(va_list args, params_t *params)
 {
 	unsigned int bytes;
 	long int num;

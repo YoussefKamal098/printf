@@ -7,7 +7,7 @@
  * Return: return
  */
 
-unsigned int print_string(va_list args, params_t *params)
+int print_string(va_list args, params_t *params)
 {
 	unsigned int len, bytes = 0;
 	char pad_char = ' ';
@@ -40,7 +40,7 @@ unsigned int print_string(va_list args, params_t *params)
  * Return: return
  */
 
-unsigned int handle_string_precision(char *str, params_t *params)
+int handle_string_precision(char *str, params_t *params)
 {
 	unsigned int len = _strlen(str);
 	unsigned int precision = params->precision;

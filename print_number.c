@@ -6,7 +6,7 @@
  * @params: params
  * Return: return
  */
-unsigned int print_number(char *str, params_t *params)
+int print_number(char *str, params_t *params)
 {
 	unsigned int bytes = 0;
 	char *temp = str;

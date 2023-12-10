@@ -7,7 +7,7 @@
  * Return: return
  */
 
-unsigned int print_rot13(va_list args, params_t *params)
+int print_rot13(va_list args, params_t *params)
 {
 	unsigned int i = 0, j, is_print;
 	char decrypt[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
