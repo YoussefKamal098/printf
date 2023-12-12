@@ -1,4 +1,4 @@
-# ALX printf project
+# printf project
 
 ![Image of printf](images/printf.png)
 
