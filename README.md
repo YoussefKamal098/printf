@@ -1,6 +1,9 @@
 # printf
 ALX PRINTF PROJECT
 
+
+![Image of printf](image/printf.png)
+
 ## Description:
 
 The printf function sends formatted output to stdout.
