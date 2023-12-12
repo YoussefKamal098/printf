@@ -25,10 +25,10 @@ int (*get_specifier_printer(char specifier))(va_list args, params_t *params)
 	    {'\0', NULL}};
 	unsigned int i = 0;
 
-	while (specifiers[i].type && specifiers[i].fn)
+	while (specifiers[i].specifier && specifiers[i].printer)
 	{
-		if (specifiers[i].type == specifier)
-			return (specifiers[i].fn);
+		if (specifiers[i].specifier == specifier)
+			return (specifiers[i].printer);
 		i++;
 	}
 

@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * get_number_field - get_number_field
+ * get_num_field - get_num_field
  * @format: format
  * @i: i
  * @args:args
  * Return: return
  */
 
-int get_number_field(char *format, int *i, va_list args)
+int get_num_field(char *format, int *i, va_list args)
 {
 	unsigned int num = 0;
 

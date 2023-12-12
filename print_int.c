@@ -18,7 +18,7 @@ int print_int(va_list args, params_t *params)
 	if (str == NULL)
 		return (0);
 
-	bytes = print_number(str, params);
+	bytes = print_num(str, params);
 
 	free(str);
 	return (bytes);

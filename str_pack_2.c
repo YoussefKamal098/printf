@@ -35,3 +35,20 @@ char *str_concat(char *str1, char *str2)
 
 	return (str);
 }
+
+/**
+ * _memset - _memset
+ * @str: str
+ * @c: c
+ * @size: size
+ * Return:return
+ */
+char *_memset(char *str, char c, unsigned int size)
+{
+	int i;
+
+	for (i = 0; size > 0; i++, size--)
+		str[i] = c;
+
+	return (str);
+}

@@ -19,7 +19,7 @@ int print_unsigned_int(va_list args, params_t *params)
 		return (0);
 
 	params->unsign = 1;
-	bytes = print_number(str, params);
+	bytes = print_num(str, params);
 
 	free(str);
 	return (bytes);

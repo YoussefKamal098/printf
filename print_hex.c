@@ -28,7 +28,7 @@ int print_hex(va_list args, params_t *params)
 	}
 
 	params->unsign = 1;
-	bytes += print_number(str, params);
+	bytes += print_num(str, params);
 
 	free(str);
 	return (bytes);
@@ -63,7 +63,7 @@ int print_HEX(va_list args, params_t *params)
 	}
 
 	params->unsign = 1;
-	bytes += print_number(str, params);
+	bytes += print_num(str, params);
 
 	free(str);
 	return (bytes);

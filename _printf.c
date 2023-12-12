@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	unsigned int i = 0, start, bytes_count = 0;
 	unsigned int format_len = _strlen((char *)format);
-	int (*fn)(va_list, params_t *);
+	int (*printer)(va_list, params_t *);
 	char except;
 	params_t params = PARAMS_INIT;
 	va_list args;
@@ -28,10 +28,10 @@ int _printf(const char *format, ...)
 		{
 			start = i;
 			i++;
-			get_specifier_param((char *)format, (int *)&i, args, &params);
-			fn = get_specifier_printer(format[i]);
-			if (fn)
-				bytes_count += fn(args, &params);
+			i = get_specifier_params((char *)format, i, args, &params);
+			printer = get_specifier_printer(format[i]);
+			if (printer)
+				bytes_count += printer(args, &params);
 			else
 			{
 				if (i >= format_len)

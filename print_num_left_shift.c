@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_number_left_shift -   print_number_left_shift
+ * print_num_left_shift -   print_num_left_shift
  * @str: str
  * @params: params
  * Return: return
  */
-int print_number_left_shift(char *str, params_t *params)
+int print_num_left_shift(char *str, params_t *params)
 {
 	unsigned int len, bytes = 0;
 	int is_neg = *str == '-';
@@ -20,12 +20,12 @@ int print_number_left_shift(char *str, params_t *params)
 
 	len = _strlen(str);
 
-	if (is_print_space(params, is_neg))
+	if (is_print_num_space(params, is_neg))
 	{
 		bytes += _putchar(' ');
 		len++;
 	}
-	if (is_print_pluse_sign(params, is_neg))
+	if (is_print_num_plus_sign(params, is_neg))
 	{
 		bytes += _putchar('+');
 		len++;

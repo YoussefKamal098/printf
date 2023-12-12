@@ -46,15 +46,15 @@ typedef struct params
 } params_t;
 
 /**
- * struct specifier - struct specifier
- * @type: type
- * @fn: fn
+ * struct specifier_printer - struct specifier_printer
+ * @specifier: specifier
+ * @printer: printer
  */
 
-typedef struct specifier
+typedef struct specifier_printer
 {
-	char type;
-	int (*fn)(va_list, params_t *);
+	char specifier;
+	int (*printer)(va_list, params_t *);
 } specifier_t;
 
 /* char_pack.c  */
@@ -70,8 +70,9 @@ unsigned int print_from_to(char *str, int start, int end, char except);
 
 /*str_pack_2.c*/
 char *str_concat(char *str1, char *str2);
+char *_memset(char *str, char c, unsigned int size);
 
-/* get_converter.c*/
+/* converter.c*/
 char *convert(long int num, unsigned int base, int is_unsign, int is_lower);
 
 /* print_bin.c */
@@ -113,33 +114,33 @@ int print_percent_sign(va_list args, params_t *params);
 /* print_char.c */
 int print_char(va_list args, params_t *params);
 
-/* print_number.c */
-int print_number(char *str, params_t *params);
-char *handle_number_precision(char *str, params_t *params);
-int is_print_number_sign(params_t *params, int is_neg);
-int is_print_space(params_t *params, int is_neg);
-int is_print_pluse_sign(params_t *params, int is_neg);
+/* print_num.c */
+int print_num(char *str, params_t *params);
+int is_print_num_sign(params_t *params, int is_neg);
+int is_print_num_space(params_t *params, int is_neg);
+int is_print_num_plus_sign(params_t *params, int is_neg);
+char *handle_num_precision(char *str, params_t *params);
 
-/* print_number_right_shift.c */
-int print_number_right_shift(char *str, params_t *params);
+/* print_num_right_shift.c */
+int print_num_right_shift(char *str, params_t *params);
 
-/* print_number_left_shift.c */
-int print_number_left_shift(char *str, params_t *params);
+/* print_num_left_shift.c */
+int print_num_left_shift(char *str, params_t *params);
 
-/* init_parameters.c */
+/* init_params.c */
 void init_params(params_t *params);
 
-/* get_parameters.c */
+/* get_params.c */
+int get_specifier_params(char *format, int i, va_list args, params_t *params);
 int get_flag(char c, params_t *params);
-int get_number_modifier(char c, params_t *params);
+int get_num_modifier(char c, params_t *params);
 void get_width(char *format, int *i, va_list args, params_t *params);
 void get_precision(char *format, int *i, va_list args, params_t *params);
-void get_specifier_param(char *format, int *i, va_list args, params_t *params);
 
-/* get_number_field.c */
-int get_number_field(char *format, int *i, va_list args);
+/* get_num_field.c */
+int get_num_field(char *format, int *i, va_list args);
 
-/* handle_number_modifier.c */
+/* handle_num_modifier.c */
 long int handle_num_modifier(va_list args, params_t *params);
 unsigned long int handle_unsigned_num_modifier(va_list args, params_t *params);
 
