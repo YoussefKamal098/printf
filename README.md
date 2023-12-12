@@ -1,6 +1,4 @@
-# printf project
-
-![Image of printf](images/printf.png)
+# printf
 
 ## Description:
 
