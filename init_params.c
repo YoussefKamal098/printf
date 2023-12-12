@@ -3,7 +3,7 @@
 /**
  * init_params - init_params
  * @params: params
- * Return: return
+ * Return: void
  */
 void init_params(params_t *params)
 {

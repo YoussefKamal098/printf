@@ -4,7 +4,7 @@
  * print_num_left_shift -   print_num_left_shift
  * @str: str
  * @params: params
- * Return: return
+ * Return: number of written bytes
  */
 int print_num_left_shift(char *str, params_t *params)
 {

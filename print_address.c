@@ -4,7 +4,7 @@
  * print_address - print_address
  * @args: args
  * @params: params
- * Return: return
+ * Return: number of written bytes
  */
 
 int print_address(va_list args, params_t *params)

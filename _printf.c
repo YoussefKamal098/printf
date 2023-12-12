@@ -4,7 +4,7 @@
  * _printf - _printf
  * @format: format
  * @...: args
- * Return: return
+ * Return: number of written bytes
  */
 
 int _printf(const char *format, ...)
@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 		{
 			start = i;
 			i++;
-			i = get_specifier_params((char *)format, i, args, &params);
+			i = set_specifier_params((char *)format, i, args, &params);
 			printer = get_specifier_printer(format[i]);
 			if (printer)
 				bytes_count += printer(args, &params);

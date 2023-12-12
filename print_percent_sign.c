@@ -4,7 +4,7 @@
  * print_percent_sign - print_percent_sign
  * @args: args
  * @params: params
- * Return: return
+ * Return: number of written bytes
  */
 
 int print_percent_sign(va_list args, params_t *params)

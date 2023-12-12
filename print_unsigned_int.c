@@ -4,7 +4,7 @@
  * print_unsigned_int - print_unsigned_int
  * @args: args
  * @params: params
- * Return: return
+ * Return: number of written bytes
  */
 int print_unsigned_int(va_list args, params_t *params)
 {

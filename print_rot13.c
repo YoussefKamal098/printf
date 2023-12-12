@@ -4,7 +4,7 @@
  * print_rot13 - print_rot13
  * @args: args
  * @params: params
- * Return: return
+ * Return: number of written bytes
  */
 
 int print_rot13(va_list args, params_t *params)

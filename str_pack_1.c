@@ -3,7 +3,7 @@
 /**
  * _puts - _puts
  * @str : @str
- * Return:return
+ * Return: number of written bytes
  */
 
 unsigned int _puts(char *str)
@@ -26,7 +26,7 @@ unsigned int _puts(char *str)
 /**
  * _strlen - _strlen
  * @str: str
- * Return: return
+ * Return: length of string
  */
 unsigned int _strlen(char *str)
 {
@@ -47,7 +47,7 @@ unsigned int _strlen(char *str)
 /**
  * _print_rev_string - _print_rev_string
  * @str:  str
- * Return: return
+ * Return: length of string
  */
 
 unsigned int _print_rev_string(char *str)
@@ -71,7 +71,7 @@ unsigned int _print_rev_string(char *str)
  * count_digit - count_digit
  * @num: num
  * @base: base
- * Return: return
+ * Return: length of number
  */
 
 unsigned int count_digit(unsigned long int num, unsigned int base)
@@ -93,7 +93,7 @@ unsigned int count_digit(unsigned long int num, unsigned int base)
  * @start: start
  * @end: end
  * @except: except
- * Return: return
+ * Return: number of written bytes
  */
 unsigned int print_from_to(char *str, int start, int end, char except)
 {

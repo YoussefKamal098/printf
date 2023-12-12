@@ -3,7 +3,7 @@
  * print_hex - print_hex
  * @args: args
  * @params: params
- * Return: return
+ * Return: number of written bytes
  */
 int print_hex(va_list args, params_t *params)
 {
@@ -38,7 +38,7 @@ int print_hex(va_list args, params_t *params)
  * print_HEX - print_HEX
  * @args: args
  * @params: params
- * Return: return
+ * Return: number of written bytes
  */
 int print_HEX(va_list args, params_t *params)
 {
@@ -72,7 +72,7 @@ int print_HEX(va_list args, params_t *params)
 /**
  * _print_HEX - _print_HEX
  * @num: num
- * Return: return
+ * Return: number of written bytes
  */
 int _print_HEX(unsigned long int num)
 {

@@ -2,7 +2,7 @@
 /**
  * get_specifier_printer - get_specifier_printer
  * @specifier: specifier
- * Return: return
+ * Return: print function of specifier or NULL
  */
 
 int (*get_specifier_printer(char specifier))(va_list args, params_t *params)

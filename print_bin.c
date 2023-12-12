@@ -4,7 +4,7 @@
  * print_bin - print_bin
  * @args: args
  * @params: params
- * Return: return
+ * Return: number of written bytes
  */
 int print_bin(va_list args, params_t *params)
 {

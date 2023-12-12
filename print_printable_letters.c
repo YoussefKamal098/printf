@@ -4,7 +4,7 @@
  * print_printable_letters - print_printable_letters
  * @args: args
  * @params: params
- * Return: return
+ * Return: number of written bytes
  */
 
 int print_printable_letters(va_list args, params_t *params)

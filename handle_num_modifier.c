@@ -4,7 +4,7 @@
  * handle_num_modifier -  handle_num_modifier
  * @args: args
  * @params: params
- * Return: return
+ * Return: modified number
  */
 long int handle_num_modifier(va_list args, params_t *params)
 {
@@ -20,7 +20,7 @@ long int handle_num_modifier(va_list args, params_t *params)
  *  handle_unsigned_num_modifier -  handle_unsigned_num_modifier
  * @args: args
  * @params: params
- * Return: return
+ * Return: modified number
  */
 unsigned long int handle_unsigned_num_modifier(va_list args, params_t *params)
 {

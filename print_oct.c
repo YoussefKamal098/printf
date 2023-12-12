@@ -4,7 +4,7 @@
  * print_oct - print_oct
  * @args: args
  * @params: params
- * Return: return
+ * Return: number of written bytes
  */
 int print_oct(va_list args, params_t *params)
 {

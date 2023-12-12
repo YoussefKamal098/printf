@@ -4,7 +4,7 @@
  * print_rev_string - print_rev_string
  * @args: args
  * @params: params
- * Return: return
+ * Return: number of written bytes
  */
 int print_rev_string(va_list args, params_t *params)
 {

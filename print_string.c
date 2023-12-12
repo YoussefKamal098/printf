@@ -4,7 +4,7 @@
  * print_string - print_string
  * @args: args
  * @params: params
- * Return: return
+ * Return: number of written bytes
  */
 
 int print_string(va_list args, params_t *params)
@@ -37,7 +37,7 @@ int print_string(va_list args, params_t *params)
  * handle_string_precision - handle_string_precision
  * @str: str
  * @params: params
- * Return: return
+ * Return: number of written bytes
  */
 
 int handle_string_precision(char *str, params_t *params)

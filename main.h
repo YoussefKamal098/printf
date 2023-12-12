@@ -130,21 +130,21 @@ int print_num_left_shift(char *str, params_t *params);
 /* init_params.c */
 void init_params(params_t *params);
 
-/* get_params.c */
-int get_specifier_params(char *format, int i, va_list args, params_t *params);
-int get_flag(char c, params_t *params);
-int get_num_modifier(char c, params_t *params);
-void get_width(char *format, int *i, va_list args, params_t *params);
-void get_precision(char *format, int *i, va_list args, params_t *params);
+/* set_params.c */
+int set_specifier_params(char *format, int i, va_list args, params_t *params);
+int set_flag(char c, params_t *params);
+int set_num_modifier(char c, params_t *params);
+void set_width(char *format, int *i, va_list args, params_t *params);
+void set_precision(char *format, int *i, va_list args, params_t *params);
 
-/* get_num_field.c */
-int get_num_field(char *format, int *i, va_list args);
+/* get_param_num.c */
+int get_param_num(char *format, int *i, va_list args);
 
 /* handle_num_modifier.c */
 long int handle_num_modifier(va_list args, params_t *params);
 unsigned long int handle_unsigned_num_modifier(va_list args, params_t *params);
 
-/* get_specifier.c */
+/* get_specifier_printer.c */
 int (*get_specifier_printer(char specifier))(va_list args, params_t *params);
 
 /* _printf.c */

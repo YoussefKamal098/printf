@@ -3,7 +3,7 @@
 /**
  * _putchar - _putchar
  * @c: c
- * Return: return
+ * Return: 1 or 0 if it failed to write character
  */
 int _putchar(char c)
 {
@@ -27,7 +27,7 @@ int _putchar(char c)
 /**
  * _isdigit - _isdigit
  * @c: c
- * Return: return
+ * Return: 1 if characters is digit 0 otherwise
  */
 int _isdigit(char c)
 {

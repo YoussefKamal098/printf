@@ -4,7 +4,7 @@
  *  print_num -  print_num
  * @str: str
  * @params: params
- * Return: return
+ * Return: number of written bytes
  */
 int print_num(char *str, params_t *params)
 {
@@ -34,7 +34,7 @@ int print_num(char *str, params_t *params)
  * is_print_num_sign - is_print_num_sign
  * @params: params
  * @is_neg: is_neg
- * Return: return
+ * Return: 1 if condition true otherwise 0
  */
 
 int is_print_num_sign(params_t *params, int is_neg)
@@ -46,7 +46,7 @@ int is_print_num_sign(params_t *params, int is_neg)
  * is_print_num_space - is_print_num_space
  * @params: params
  * @is_neg: is_neg
- * Return: return
+ * Return: 1 if condition true otherwise 0
  */
 int is_print_num_space(params_t *params, int is_neg)
 {
@@ -59,7 +59,7 @@ int is_print_num_space(params_t *params, int is_neg)
  * is_print_num_plus_sign - is_print_num_plus_sign
  * @params: params
  * @is_neg: is_neg
- * Return: return
+ * Return: 1 if condition true otherwise 0
  */
 
 int is_print_num_plus_sign(params_t *params, int is_neg)
@@ -73,7 +73,7 @@ int is_print_num_plus_sign(params_t *params, int is_neg)
  * handle_num_precision -handle_num_precision
  * @str: str
  * @params: params
- * Return: return
+ * Return: number in string format with padding zeros
  */
 char *handle_num_precision(char *str, params_t *params)
 {

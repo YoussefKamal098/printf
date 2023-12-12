@@ -4,7 +4,7 @@
  * str_concat - str_concat
  * @str1 :str1
  * @str2 :str2
- * Return: return
+ * Return: concatenated string or NULL
  */
 
 char *str_concat(char *str1, char *str2)
@@ -41,7 +41,7 @@ char *str_concat(char *str1, char *str2)
  * @str: str
  * @c: c
  * @size: size
- * Return:return
+ * Return: string of specific character
  */
 char *_memset(char *str, char c, unsigned int size)
 {

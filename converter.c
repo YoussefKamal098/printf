@@ -5,7 +5,7 @@
  * @base: base
  * @is_unsigned: is_unsigned
  * @is_lower: is_lower
- * Return: return
+ * Return: converted number in string format or NULL
  */
 
 char *convert(long int num, unsigned int base, int is_unsigned, int is_lower)
