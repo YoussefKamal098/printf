@@ -1,6 +1,7 @@
-# printf
-ALX PRINTF PROJECT
+# ALX printf project
 
+![Image of C](images/c_programming.png)
+##
 
 ![Image of printf](images/printf.png)
 
@@ -166,12 +167,6 @@ Currently no known bugs.
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-##
-
-![Image of C](images/c_programming.png)
-
-##
 
 ### Authors &copy;
 
