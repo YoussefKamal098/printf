@@ -160,9 +160,6 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## Disclaimer
-if you happen to use these repo for ALX we got `199.9%`
-
 ## Known Bugs
 Currently no known bugs.
 
