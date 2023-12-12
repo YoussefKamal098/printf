@@ -2,7 +2,7 @@
 ALX PRINTF PROJECT
 
 
-![Image of printf](image/printf.png)
+![Image of printf](images/printf.png)
 
 ## Description:
 
@@ -167,8 +167,15 @@ Currently no known bugs.
 
 Give a ⭐️ if you like this project!
 
+##
+
+![Image of C](images/c_programming.png)
+
+##
+
 ### Authors &copy;
 
 - Youssef Samuel Kamal - [YoussefKamal098](https://github.com/YoussefKamal098)
   
+
 
