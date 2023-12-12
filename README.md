@@ -1,8 +1,5 @@
 # ALX printf project
 
-![Image of C](images/c_programming.png)
-##
-
 ![Image of printf](images/printf.png)
 
 ## Description:
@@ -155,14 +152,12 @@ Handle the following custom conversion specifier:
 16. ###### *
 All the above options work well together.
 
-## 🤝 Contributing
+ 
 
-Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
 
 ## Known Bugs
-Currently no known bugs.
+Currently no known bugs. 🤝 Feel free to check the [issues page](../../issues/).
 
 ## Show your support
 
