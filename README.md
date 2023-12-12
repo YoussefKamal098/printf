@@ -151,6 +151,22 @@ Handle the following custom conversion specifier:
 16. ###### *
 All the above options work well together.
 
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Disclaimer
+if you happen to use these repo for ALX we got `199.9%`
+
+## Known Bugs
+Currently no known bugs.
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
 ### Authors &copy;
 
 - Youssef Samuel Kamal - [YoussefKamal098](https://github.com/YoussefKamal098)
