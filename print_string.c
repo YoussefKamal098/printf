@@ -33,7 +33,7 @@ int print_string(va_list args, params_t *params)
 	if (!params->minus_flag)
 		bytes += handle_string_precision(str, params);
 
-	if (new_line && params->precision < old_len)
+	if (new_line && params->precision && params->precision < old_len)
 		bytes += _putchar('\n');
 
 	return (bytes);
