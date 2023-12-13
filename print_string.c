@@ -9,14 +9,17 @@
 
 int print_string(va_list args, params_t *params)
 {
-	unsigned int len, bytes = 0;
+	unsigned int len, old_len, bytes = 0;
+	int new_line;
 	char pad_char = ' ';
 	char *str = va_arg(args, char *);
 
 	if (str == NULL)
 		str = NULL_STRING;
 
-	len = _strlen(str);
+	old_len = len = _strlen(str);
+
+	new_line = str[len - 1] == '\n';
 
 	if (params->precision < len)
 		len = params->precision;
@@ -29,6 +32,9 @@ int print_string(va_list args, params_t *params)
 
 	if (!params->minus_flag)
 		bytes += handle_string_precision(str, params);
+
+	if (new_line && params->precision < old_len)
+		bytes += _putchar('\n');
 
 	return (bytes);
 }

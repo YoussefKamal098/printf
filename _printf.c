@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0, start, bytes_count = 0;
+	unsigned int i = 0, start, bytes = 0;
 	unsigned int format_len = _strlen((char *)format);
 	int (*printer)(va_list, params_t *);
 	char except;
@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
+	if (format[0] == '%' && format[1] == ' ' && format[2] == '\0')
 		return (-1);
 	while (format[i])
 	{
@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 			i = set_specifier_params((char *)format, i, args, &params);
 			printer = get_specifier_printer(format[i]);
 			if (printer)
-				bytes_count += printer(args, &params);
+				bytes += printer(args, &params);
 			else
 			{
 				if (i >= format_len)
@@ -39,14 +39,14 @@ int _printf(const char *format, ...)
 
 				except = params.l_modifier ? 'l' : '\0';
 				except = params.h_modifier ? 'h' : except;
-				bytes_count += print_from_to((char *)format, start, i, except);
+				bytes += print_from_to((char *)format, start, i, except);
 			}
 		}
 		else
-			bytes_count += _putchar(format[i]);
+			bytes += _putchar(format[i]);
 		i++;
 	}
 	va_end(args);
 	_putchar(BUFFER_FLUSH);
-	return (bytes_count);
+	return (bytes);
 }

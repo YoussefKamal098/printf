@@ -130,7 +130,7 @@ int print_num_left_shift(char *str, params_t *params);
 /* init_params.c */
 void init_params(params_t *params);
 
-/* set_params.c */
+/* set_specifier_params.c */
 int set_specifier_params(char *format, int i, va_list args, params_t *params);
 int set_flag(char c, params_t *params);
 int set_num_modifier(char c, params_t *params);
